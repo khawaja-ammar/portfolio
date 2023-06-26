@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+// const frontEndLinks = [];
 ---
 
 <BaseLayout title="Khawaja Ammar" description="Khawaja Ammar's Portfolio">
@@ -10,8 +12,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="basis-full sm:basis-2/3">
         <h1 class="">Full Stack Engineer 👋🏻</h1>
         <p>
-          Hi, I'm Ammar, a passionate full stack developer currently based in
-          Pakistan. 📍
+          Hi, I'm Ammar, a passionate programmer currently based in Pakistan. 📍
         </p>
       </div>
       <div
@@ -20,43 +21,63 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <img class="rounded-xl" src="profile.jpg" />
       </div>
     </section>
-    <!-- border-2 border-black border-opacity-25 bg-secondarycolor p-3 dark:bg-secondarycolor-dark -->
-    <!-- class="my-12 flex flex-col items-start justify-start rounded-2xl border border-accentcolor bg-secondarycolor p-12 dark:bg-secondarycolor-dark md:flex-row md:gap-4" -->
+
     <section
       class="flex w-full flex-col items-center rounded-2xl border-2 border-black border-opacity-25 bg-secondarycolor p-12 dark:bg-secondarycolor-dark"
     >
-      <h3>Technologies</h3>
+      <div class="flex w-full justify-between">
+        <h3 class="">Select frameworks</h3>
+        <a class="self-end text-accentcolor" href="/skills">See all...</a>
+      </div>
       <div
-        class="grid w-full grid-cols-4 content-center items-center justify-center"
+        class="grid w-full grid-cols-3 justify-start justify-items-center border"
       >
-        <p>React</p>
-        <p>Vue</p>
-        <p>Express</p>
-        <p>Next</p>
+        <div class="">
+          <h4>Frontend</h4>
+          <p>React</p>
+          <p>Vue</p>
+          <p>Tailwind</p>
+        </div>
+        <div>
+          <h4>Backend</h4>
+          <p>Express</p>
+          <p>Next</p>
+        </div>
+        <div>
+          <h4>Database</h4>
+          <p>Postgres</p>
+          <p>MySQL</p>
+        </div>
       </div>
     </section>
 
     <section
-      class="flex flex-col items-start justify-start rounded-2xl border-2 border-black border-opacity-25 bg-secondarycolor p-12 dark:bg-secondarycolor-dark md:flex-row md:gap-4"
+      class="flex w-full flex-col items-center rounded-2xl border-2 border-black border-opacity-25 bg-secondarycolor p-12 dark:bg-secondarycolor-dark"
     >
-      <div class="basis-full">
-        <h3>Full Stack Engineer</h3>
-        <p>I am the Lord of all that is golden</p>
+      <div class="flex w-full justify-between">
+        <h3 class="">Select projects</h3>
+        <a class="self-end text-accentcolor" href="/work">See all...</a>
       </div>
+      <div>
+        <div class="basis-full">
+          <h3>Full Stack Engineer</h3>
+          <p>I am the Lord of all that is golden</p>
+        </div>
 
-      <div class="basis-full">
-        <h3>Hello</h3>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error quod
-          cupiditate quam maiores sint aut.
-        </p>
-      </div>
-      <div class="basis-full">
-        <h3>Hello</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
-          reiciendis?
-        </p>
+        <div class="basis-full">
+          <h3>Hello</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error quod
+            cupiditate quam maiores sint aut.
+          </p>
+        </div>
+        <div class="basis-full">
+          <h3>Hello</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
+            reiciendis?
+          </p>
+        </div>
       </div>
     </section>
   </main>
