@@ -1,0 +1,184 @@
+---
+import SVGIcon, { Props as IconProps } from "./svg/SVGIcon.astro";
+import CursorAnimation from "./ui/CursorAnimation.astro";
+
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Skills", href: "/skills/" },
+  { label: "Work", href: "/work/" },
+  { label: "About", href: "/about/" },
+];
+
+const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
+  {
+    label: "GitHub",
+    href: "https://github.com/khawaja-ammar",
+    icon: "logoGithub",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/ammar-khawaja-393680158/",
+    icon: "logoLinkedIn",
+  },
+  {
+    label: "Upwork",
+    href: "https://www.upwork.com/freelancers/~0153e26e88914b29a4",
+    icon: "logoUpwork",
+  },
+  // {
+  //   label: "Twitter",
+  //   href: "https://twitter.com/khawaja_ammar97",
+  //   icon: "logoTwitter",
+  // },
+];
+
+const url = Astro.url.pathname;
+---
+
+<!-- px-10 pb-16 pt-8 font-mono -->
+<nav class="flex items-center justify-between">
+  <a href="/" class="flex">
+    <CursorAnimation
+      className="text-base sm:text-lg md:text-xl xl:text-2xl dark:text-accentcolor-alt text-accentcolor"
+    />
+  </a>
+
+  <ul
+    class="hidden gap-4 rounded-full border-2 border-black border-opacity-25 bg-secondarycolor p-3 dark:bg-secondarycolor-dark lg:flex"
+  >
+    {
+      navItems.map(({ label, href }) => (
+        <li class="list-none">
+          <a
+            class={`rounded-full px-2 py-1 duration-300  ${
+              url === href
+                ? "bg-accentcolor text-white dark:text-black"
+                : "hover:bg-accentcolor-light hover:text-white hover:opacity-50 dark:hover:text-black"
+            }`}
+            href={href}
+          >
+            {label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="flex items-center gap-6">
+    <div
+      id="dark_mode_container"
+      class="hidden duration-300 hover:cursor-pointer hover:opacity-50 md:flex"
+    >
+      <SVGIcon icon="darkMode" className="svg inline dark:hidden" />
+      <SVGIcon
+        icon="lightMode"
+        color="white"
+        className="svg hidden dark:inline"
+      />
+    </div>
+    <div class="hidden h-[2em] rounded-full border border-accentcolor md:block">
+    </div>
+    <div class="hidden items-center gap-4 pr-2 md:flex">
+      {
+        iconLinks.map(({ href, icon, label }) => (
+          <a href={href} target="_blank" class="duration-300 hover:opacity-50">
+            <span class="sr-only">{label}</span>
+            <SVGIcon icon={icon} className="svg dark:fill-white" />
+          </a>
+        ))
+      }
+    </div>
+    {/* Small Screen Menu */}
+    <div class="relative flex flex-col items-center lg:hidden">
+      <button class="duration-150 hover:cursor-pointer" id="smallscreen-toggle">
+        <SVGIcon icon="downArrow" className="fill-orange-500" />
+      </button>
+      <div
+        class="absolute right-1 top-12 z-50 hidden rounded-md border border-accentcolor bg-secondarycolor p-12 dark:bg-secondarycolor-dark"
+        id="smallscreen-content"
+      >
+        <ul class="flex flex-col">
+          {
+            navItems.map(({ label, href }) => (
+              <li>
+                <a
+                  class={`duration-300  ${
+                    url === href ? "text-accentcolor" : "hover:opacity-50"
+                  }`}
+                  href={href}
+                >
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="flex items-center gap-6 pt-4 md:hidden">
+          <div
+            id="smallscreen-dark_mode_container"
+            class="flex duration-300 hover:cursor-pointer hover:opacity-50"
+          >
+            <SVGIcon icon="darkMode" className="svg inline dark:hidden" />
+            <SVGIcon
+              icon="lightMode"
+              color="white"
+              className="svg hidden dark:inline"
+            />
+          </div>
+          <div class="h-[2em] rounded-full border border-accentcolor"></div>
+          <div class="flex items-center gap-4">
+            {
+              iconLinks.map(({ href, icon, label }) => (
+                <a
+                  href={href}
+                  target="_blank"
+                  class="duration-300 hover:opacity-50"
+                >
+                  <span class="sr-only">{label}</span>
+                  <SVGIcon icon={icon} className="svg dark:fill-white" />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const container = document.getElementById("dark_mode_container");
+  const smallScreenContainer = document.getElementById(
+    "smallscreen-dark_mode_container"
+  );
+
+  if (container) {
+    container.addEventListener("click", () => {
+      const goDark = !document.documentElement.classList.contains("dark");
+      document.documentElement.classList[goDark ? "add" : "remove"]("dark");
+      localStorage.setItem("theme", goDark ? "dark" : "light");
+    });
+  }
+  if (smallScreenContainer) {
+    smallScreenContainer.addEventListener("click", () => {
+      const goDark = !document.documentElement.classList.contains("dark");
+      document.documentElement.classList[goDark ? "add" : "remove"]("dark");
+      localStorage.setItem("theme", goDark ? "dark" : "light");
+    });
+  }
+</script>
+
+<script>
+  const smallScreenToggle = document.getElementById("smallscreen-toggle");
+  const smallScreenContent = document.getElementById("smallscreen-content");
+  if (smallScreenToggle && smallScreenContent) {
+    smallScreenToggle.addEventListener("click", () => {
+      if (smallScreenContent.style.display === "block") {
+        smallScreenContent.style.display = "none";
+        smallScreenToggle.style.transform = "rotate(0)";
+      } else {
+        smallScreenContent.style.display = "block";
+        smallScreenToggle.style.transform = "rotate(180deg)";
+      }
+    });
+  }
+</script>

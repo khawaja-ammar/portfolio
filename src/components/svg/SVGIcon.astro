@@ -1,0 +1,40 @@
+---
+import { iconPaths } from "./IconPaths";
+
+export interface Props {
+  icon: keyof typeof iconPaths;
+  color?: string;
+  size?: string;
+  className?: string;
+}
+
+const { icon, size = "1.6em", color = "black", className = "" } = Astro.props;
+
+const svgPath = iconPaths[icon] as string;
+
+// Exact Content from the svg wrapper
+const svgWrapper = svgPath.substring(4, svgPath.indexOf(">"));
+
+const svgVals = svgWrapper.split('"');
+let svgViewBox = "";
+for (let i = 0; i < svgVals.length; i++) {
+  if (svgVals[i].includes("viewBox")) {
+    svgViewBox = svgVals[i + 1];
+  }
+}
+
+const svgVectors = svgPath.substring(
+  svgPath.indexOf(">") + 1,
+  svgPath.length - 6
+);
+---
+
+<svg
+  fill={color}
+  width={size}
+  height={size}
+  viewBox={svgViewBox}
+  class={className}
+>
+  <g set:html={svgVectors} />
+</svg>
