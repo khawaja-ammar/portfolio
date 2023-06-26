@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 // const frontEndLinks = [];
 ---
 
@@ -10,8 +9,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       class="flex flex-col items-center justify-center gap-4 sm:flex-row"
     >
       <div class="basis-full sm:basis-2/3">
-        <h1 class="">Full Stack Engineer 👋🏻</h1>
-        <p>
+        <!-- class="text-xl font-bold md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl" -->
+        <h1>Full Stack Engineer 👋🏻</h1>
+        <p class="">
           Hi, I'm Ammar, a passionate programmer currently based in Pakistan. 📍
         </p>
       </div>
@@ -26,27 +26,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       class="flex w-full flex-col items-center rounded-2xl border-2 border-black border-opacity-25 bg-secondarycolor p-12 dark:bg-secondarycolor-dark"
     >
       <div class="flex w-full justify-between">
-        <h3 class="">Select frameworks</h3>
+        <h2>Frameworks</h2>
         <a class="self-end text-accentcolor" href="/skills">See all...</a>
       </div>
-      <div
-        class="grid w-full grid-cols-3 justify-start justify-items-center border"
-      >
-        <div class="">
-          <h4>Frontend</h4>
-          <p>React</p>
-          <p>Vue</p>
-          <p>Tailwind</p>
-        </div>
+      <div class="grid w-full grid-rows-3">
         <div>
-          <h4>Backend</h4>
-          <p>Express</p>
-          <p>Next</p>
+          <h3>Frontend</h3>
+          <div class="flex">
+            <p>React</p>
+            <p>Vue</p>
+            <p>Tailwind</p>
+          </div>
         </div>
+
         <div>
-          <h4>Database</h4>
-          <p>Postgres</p>
-          <p>MySQL</p>
+          <h3>Backend</h3>
+          <div class="flex">
+            <p>Express</p>
+            <p>Next</p>
+          </div>
+        </div>
+
+        <div>
+          <h3>Database</h3>
+          <div class="flex">
+            <p>Postgres</p>
+            <p>MySQL</p>
+          </div>
         </div>
       </div>
     </section>
@@ -55,7 +61,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       class="flex w-full flex-col items-center rounded-2xl border-2 border-black border-opacity-25 bg-secondarycolor p-12 dark:bg-secondarycolor-dark"
     >
       <div class="flex w-full justify-between">
-        <h3 class="">Select projects</h3>
+        <h1>Projects</h1>
         <a class="self-end text-accentcolor" href="/work">See all...</a>
       </div>
       <div>
