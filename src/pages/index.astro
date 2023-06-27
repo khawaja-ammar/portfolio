@@ -1,6 +1,96 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-// const frontEndLinks = [];
+import SVGIcon, { Props as IconProps } from "../components/svg/SVGIcon.astro";
+
+const frontEndLinks: {
+  label: string;
+  href: string;
+  icon: IconProps["icon"];
+}[] = [
+  {
+    label: "React",
+    href: "",
+    icon: "react",
+  },
+  {
+    label: "Vue",
+    href: "",
+    icon: "vue",
+  },
+  {
+    label: "Tailwind",
+    href: "",
+    icon: "tailwind",
+  },
+  {
+    label: "Astro",
+    href: "",
+    icon: "astro",
+  },
+  {
+    label: "Astro",
+    href: "",
+    icon: "html",
+  },
+  {
+    label: "Astro",
+    href: "",
+    icon: "css",
+  },
+  {
+    label: "Astro",
+    href: "",
+    icon: "javascript",
+  },
+  {
+    label: "Astro",
+    href: "",
+    icon: "typescript",
+  },
+  {
+    label: "Astro",
+    href: "",
+    icon: "golang",
+  },
+];
+
+const backEndLinks: {
+  label: string;
+  href?: string;
+  icon: IconProps["icon"];
+}[] = [
+  {
+    label: "Node.js",
+    icon: "nodejs",
+  },
+  {
+    label: "Python",
+    icon: "python",
+  },
+  {
+    label: "Express.js",
+    icon: "expressjs",
+  },
+  {
+    label: "Next.js",
+    icon: "nextjs",
+  },
+];
+
+const dbLinks: {
+  label: string;
+  href?: string;
+  icon: IconProps["icon"];
+}[] = [
+  {
+    label: "Mongo",
+    icon: "mongodb",
+  },
+  {
+    label: "Postgres",
+    icon: "postgres",
+  },
+];
 ---
 
 <BaseLayout title="Khawaja Ammar" description="Khawaja Ammar's Portfolio">
@@ -9,7 +99,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       class="flex flex-col items-center justify-center gap-4 sm:flex-row"
     >
       <div class="basis-full sm:basis-2/3">
-        <!-- class="text-xl font-bold md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl" -->
         <h1>Full Stack Engineer 👋🏻</h1>
         <p class="">
           Hi, I'm Ammar, a passionate programmer currently based in Pakistan. 📍
@@ -23,7 +112,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <section
-      class="flex w-full flex-col items-center rounded-2xl border-2 border-black border-opacity-25 bg-secondarycolor p-12 dark:bg-secondarycolor-dark"
+      class="flex w-full flex-col items-center rounded-2xl border-2 border-bordercolor border-opacity-25 bg-secondarycolor p-12 dark:bg-secondarycolor-dark"
     >
       <div class="flex w-full justify-between">
         <h2>Frameworks</h2>
@@ -32,33 +121,43 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="grid w-full grid-rows-3">
         <div>
           <h3>Frontend</h3>
-          <div class="flex">
-            <p>React</p>
-            <p>Vue</p>
-            <p>Tailwind</p>
+          <div class="flex justify-center gap-8">
+            {
+              frontEndLinks.map((link) => (
+                <SVGIcon
+                  size="120px"
+                  icon={link.icon}
+                  className={
+                    link.label === "React" ? "animate-react-logo-spin" : ""
+                  }
+                />
+              ))
+            }
           </div>
         </div>
 
         <div>
           <h3>Backend</h3>
-          <div class="flex">
-            <p>Express</p>
-            <p>Next</p>
+          <div class="flex justify-center gap-8">
+            {
+              backEndLinks.map((link) => (
+                <SVGIcon size="120px" icon={link.icon} />
+              ))
+            }
           </div>
         </div>
 
         <div>
           <h3>Database</h3>
-          <div class="flex">
-            <p>Postgres</p>
-            <p>MySQL</p>
+          <div class="flex justify-center gap-8">
+            {dbLinks.map((link) => <SVGIcon size="120px" icon={link.icon} />)}
           </div>
         </div>
       </div>
     </section>
 
     <section
-      class="flex w-full flex-col items-center rounded-2xl border-2 border-black border-opacity-25 bg-secondarycolor p-12 dark:bg-secondarycolor-dark"
+      class="flex w-full flex-col items-center rounded-2xl border-2 border-bordercolor border-opacity-25 bg-secondarycolor p-12 dark:bg-secondarycolor-dark"
     >
       <div class="flex w-full justify-between">
         <h1>Projects</h1>

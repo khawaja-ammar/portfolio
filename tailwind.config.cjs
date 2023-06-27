@@ -14,6 +14,10 @@ module.exports = {
         "primarycolor-dark": "#1F2937",
         "secondarycolor-dark": "#374151",
         "accentcolor-alt": "#00FF00",
+        bordercolor: "black",
+      },
+      animation: {
+        "react-logo-spin": "spin infinite 20s linear",
       },
     },
   },

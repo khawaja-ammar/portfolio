@@ -8,7 +8,12 @@ export interface Props {
   className?: string;
 }
 
-const { icon, size = "1.6em", color = "black", className = "" } = Astro.props;
+const {
+  icon,
+  size = "1.6em",
+  className = "",
+  color = "currentColor",
+} = Astro.props;
 
 const svgPath = iconPaths[icon] as string;
 
@@ -17,10 +22,17 @@ const svgWrapper = svgPath.substring(4, svgPath.indexOf(">"));
 
 const svgVals = svgWrapper.split('"');
 let svgViewBox = "";
+let svgFill = "";
 for (let i = 0; i < svgVals.length; i++) {
   if (svgVals[i].includes("viewBox")) {
     svgViewBox = svgVals[i + 1];
+  } else if (svgVals[i].includes("fill")) {
+    svgFill = svgVals[i + 1];
   }
+}
+
+if (color !== "currentColor") {
+  svgFill = color;
 }
 
 const svgVectors = svgPath.substring(
@@ -30,11 +42,11 @@ const svgVectors = svgPath.substring(
 ---
 
 <svg
-  fill={color}
+  fill={svgFill}
   width={size}
   height={size}
   viewBox={svgViewBox}
-  class={className}
+  class={`aspect-square ${className}`}
 >
   <g set:html={svgVectors} />
 </svg>

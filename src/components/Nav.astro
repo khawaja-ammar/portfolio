@@ -49,7 +49,7 @@ const url = Astro.url.pathname;
   </a>
 
   <ul
-    class="hidden gap-4 rounded-full border-2 border-black border-opacity-25 bg-secondarycolor p-3 dark:bg-secondarycolor-dark lg:flex"
+    class="hidden gap-4 rounded-full border-2 border-bordercolor border-opacity-25 bg-secondarycolor p-3 dark:bg-secondarycolor-dark lg:flex"
   >
     {
       navItems.map(({ label, href }) => (
@@ -73,12 +73,8 @@ const url = Astro.url.pathname;
       id="dark_mode_container"
       class="hidden duration-300 hover:cursor-pointer hover:opacity-50 md:flex"
     >
-      <SVGIcon icon="darkMode" className="svg inline dark:hidden" />
-      <SVGIcon
-        icon="lightMode"
-        color="white"
-        className="svg hidden dark:inline"
-      />
+      <SVGIcon icon="darkMode" className="inline dark:hidden" />
+      <SVGIcon icon="lightMode" color="white" className="hidden dark:inline" />
     </div>
     <div class="hidden h-[2em] rounded-full border border-accentcolor md:block">
     </div>
@@ -87,7 +83,7 @@ const url = Astro.url.pathname;
         iconLinks.map(({ href, icon, label }) => (
           <a href={href} target="_blank" class="duration-300 hover:opacity-50">
             <span class="sr-only">{label}</span>
-            <SVGIcon icon={icon} className="svg dark:fill-white" />
+            <SVGIcon icon={icon} className="dark:fill-white" />
           </a>
         ))
       }
@@ -122,11 +118,11 @@ const url = Astro.url.pathname;
             id="smallscreen-dark_mode_container"
             class="flex duration-300 hover:cursor-pointer hover:opacity-50"
           >
-            <SVGIcon icon="darkMode" className="svg inline dark:hidden" />
+            <SVGIcon icon="darkMode" className="inline dark:hidden" />
             <SVGIcon
               icon="lightMode"
               color="white"
-              className="svg hidden dark:inline"
+              className="hidden dark:inline"
             />
           </div>
           <div class="h-[2em] rounded-full border border-accentcolor"></div>
@@ -139,7 +135,7 @@ const url = Astro.url.pathname;
                   class="duration-300 hover:opacity-50"
                 >
                   <span class="sr-only">{label}</span>
-                  <SVGIcon icon={icon} className="svg dark:fill-white" />
+                  <SVGIcon icon={icon} className="dark:fill-white" />
                 </a>
               ))
             }
