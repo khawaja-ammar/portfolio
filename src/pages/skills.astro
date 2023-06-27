@@ -1,5 +1,40 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SVGIcon, { Props as IconProps } from "../components/svg/SVGIcon.astro";
+
+const langaugeLinks: {
+  label: string;
+  icon: IconProps["icon"];
+}[] = [
+  {
+    label: "javascript",
+    icon: "javascript",
+  },
+  {
+    label: "typescript",
+    icon: "typescript",
+  },
+  {
+    label: "python",
+    icon: "python",
+  },
+  {
+    label: "html",
+    icon: "html",
+  },
+  {
+    label: "cplusplus",
+    icon: "cplusplus",
+  },
+  {
+    label: "golang",
+    icon: "golang",
+  },
+  {
+    label: "css",
+    icon: "css",
+  },
+];
 ---
 
 <BaseLayout title="Skills">
@@ -8,13 +43,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       class="flex w-full flex-col items-center rounded-2xl border-2 border-black border-opacity-25 bg-secondarycolor p-12 dark:bg-secondarycolor-dark"
     >
       <h3>Languages</h3>
-      <p>Javascript</p>
-      <p>Typescript</p>
-      <p>Python</p>
-      <p>C++</p>
-      <p>Golang</p>
-      <p>HTML</p>
-      <p>CSS</p>
+      <div class="flex gap-12 text-5xl">
+        {
+          langaugeLinks.map((link) => (
+            <a href={`/tags/${link.label}`}>
+              <SVGIcon icon={link.icon} />
+            </a>
+          ))
+        }
+      </div>
     </section>
     <section>Techs</section>
   </main>
