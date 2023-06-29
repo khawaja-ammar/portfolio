@@ -30,9 +30,6 @@
 
 @layer components {
   .sectionContainer {
-    @apply flex w-full flex-col items-center rounded-2xl border-2 border-bordercolor border-opacity-25 bg-secondarycolor p-12 dark:bg-secondarycolor-dark;
+    @apply flex w-full flex-col items-center rounded-lg border-2 border-bordercolor border-opacity-25 bg-secondarycolor p-12 dark:border-bordercolor-dark dark:bg-secondarycolor-dark;
   }
-  /* .svg {
-
-  } */
 }

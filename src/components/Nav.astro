@@ -40,7 +40,6 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
 const url = Astro.url.pathname;
 ---
 
-<!-- px-10 pb-16 pt-8 font-mono -->
 <nav class="flex items-center justify-between">
   <a href="/" class="flex">
     <CursorAnimation
@@ -49,7 +48,7 @@ const url = Astro.url.pathname;
   </a>
 
   <ul
-    class="hidden gap-4 rounded-full border-2 border-bordercolor border-opacity-25 bg-secondarycolor p-3 dark:bg-secondarycolor-dark lg:flex"
+    class="hidden gap-4 rounded-full border-2 border-bordercolor border-opacity-25 bg-secondarycolor p-3 dark:border-bordercolor-dark dark:bg-secondarycolor-dark lg:flex"
   >
     {
       navItems.map(({ label, href }) => (
@@ -70,7 +69,7 @@ const url = Astro.url.pathname;
   </ul>
   <div class="flex items-center gap-6">
     <!-- <div
-      class="hidden rounded-full border-2 border-bordercolor border-opacity-25 bg-secondarycolor p-3 dark:bg-secondarycolor-dark lg:flex"
+      class="hidden rounded-full border-2 border-bordercolor dark:border-bordercolor-dark border-opacity-25 bg-secondarycolor p-3 dark:bg-secondarycolor-dark lg:flex"
     >
       <a
         href="/blogs/"
@@ -103,13 +102,14 @@ const url = Astro.url.pathname;
     {/* Small Screen Menu */}
     <div class="relative flex flex-col items-center lg:hidden">
       <button
-        class="rotate-0 duration-150 hover:cursor-pointer [&.active]:rotate-180"
+        class="rotate-0 duration-75 hover:cursor-pointer [&.is-active]:rotate-180"
         id="smallscreen-toggle"
       >
         <SVGIcon icon="downArrow" className="fill-orange-500 " />
       </button>
+      <!-- Small Screen Modal -->
       <div
-        class="absolute right-1 top-12 z-50 hidden rounded-md border border-accentcolor bg-secondarycolor p-12 dark:bg-secondarycolor-dark [&.active]:block"
+        class="absolute right-1 top-12 z-50 hidden rounded-md border border-accentcolor bg-secondarycolor p-12 dark:bg-secondarycolor-dark [&.is-active]:block"
         id="smallscreen-content"
       >
         <ul class="flex flex-col">
@@ -188,12 +188,12 @@ const url = Astro.url.pathname;
   const smallScreenContent = document.getElementById("smallscreen-content");
   if (smallScreenToggle && smallScreenContent) {
     smallScreenToggle.addEventListener("click", () => {
-      if (smallScreenToggle.classList.contains("active")) {
-        smallScreenToggle.classList.remove("active");
-        smallScreenContent.classList.remove("active");
+      if (smallScreenToggle.classList.contains("is-active")) {
+        smallScreenToggle.classList.remove("is-active");
+        smallScreenContent.classList.remove("is-active");
       } else {
-        smallScreenToggle.classList.add("active");
-        smallScreenContent.classList.add("active");
+        smallScreenToggle.classList.add("is-active");
+        smallScreenContent.classList.add("is-active");
       }
     });
   }
