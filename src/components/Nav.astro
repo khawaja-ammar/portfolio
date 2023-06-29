@@ -21,15 +21,15 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
     icon: "logoLinkedIn",
   },
   {
+    label: "Upwork",
+    href: "https://www.upwork.com/freelancers/~0153e26e88914b29a4",
+    icon: "logoUpwork",
+  },
+  {
     label: "Email",
     href: "mailto:mammarkh@gmail.com",
     icon: "email",
   },
-  // {
-  //   label: "Upwork",
-  //   href: "https://www.upwork.com/freelancers/~0153e26e88914b29a4",
-  //   icon: "logoUpwork",
-  // },
   // {
   //   label: "Twitter",
   //   href: "https://twitter.com/khawaja_ammar97",
@@ -57,7 +57,7 @@ const url = Astro.url.pathname;
           <a
             class={`rounded-full px-2 py-1 duration-300  ${
               url === href
-                ? "bg-accentcolor text-white dark:text-black"
+                ? "bg-accentcolor text-white hover:opacity-100 dark:text-black"
                 : "hover:bg-accentcolor-light hover:text-white hover:opacity-50 dark:hover:text-black"
             }`}
             href={href}
@@ -69,6 +69,18 @@ const url = Astro.url.pathname;
     }
   </ul>
   <div class="flex items-center gap-6">
+    <!-- <div
+      class="hidden rounded-full border-2 border-bordercolor border-opacity-25 bg-secondarycolor p-3 dark:bg-secondarycolor-dark lg:flex"
+    >
+      <a
+        href="/blogs/"
+        class={`rounded-full px-2 py-1 duration-300 ${
+          url === "/blogs/"
+            ? "bg-accentcolor text-white dark:text-black hover:opacity-100"
+            : "hover:bg-accentcolor-light hover:text-white hover:opacity-50 dark:hover:text-black"
+        }`}>Blog</a
+      >
+    </div> -->
     <div
       id="dark_mode_container"
       class="hidden duration-300 hover:cursor-pointer hover:opacity-50 md:flex"
