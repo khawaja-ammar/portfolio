@@ -1,14 +1,14 @@
 # Portfolio Website
 
-This is my personal portfolio website meant to show of my skills and experiences
+This is my personal portfolio website meant to show of my skills and experiences as well as maintain a blog potentially
 
 ## About this website
 
 - Astro Framework (SSG)
-- Pure Javascript (no frameworks for best performance)
+- Pure Javascript (Typescript) => no frameworks for best performance
 - Tailwindcss
 - SEO optimized
 
 ## Build
 
-Use PNPM to build
+Used PNPM to build
