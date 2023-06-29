@@ -102,11 +102,14 @@ const url = Astro.url.pathname;
     </div>
     {/* Small Screen Menu */}
     <div class="relative flex flex-col items-center lg:hidden">
-      <button class="duration-150 hover:cursor-pointer" id="smallscreen-toggle">
-        <SVGIcon icon="downArrow" className="fill-orange-500" />
+      <button
+        class="rotate-0 duration-150 hover:cursor-pointer [&.active]:rotate-180"
+        id="smallscreen-toggle"
+      >
+        <SVGIcon icon="downArrow" className="fill-orange-500 " />
       </button>
       <div
-        class="absolute right-1 top-12 z-50 hidden rounded-md border border-accentcolor bg-secondarycolor p-12 dark:bg-secondarycolor-dark"
+        class="absolute right-1 top-12 z-50 hidden rounded-md border border-accentcolor bg-secondarycolor p-12 dark:bg-secondarycolor-dark [&.active]:block"
         id="smallscreen-content"
       >
         <ul class="flex flex-col">
@@ -185,12 +188,12 @@ const url = Astro.url.pathname;
   const smallScreenContent = document.getElementById("smallscreen-content");
   if (smallScreenToggle && smallScreenContent) {
     smallScreenToggle.addEventListener("click", () => {
-      if (smallScreenContent.style.display === "block") {
-        smallScreenContent.style.display = "none";
-        smallScreenToggle.style.transform = "rotate(0)";
+      if (smallScreenToggle.classList.contains("active")) {
+        smallScreenToggle.classList.remove("active");
+        smallScreenContent.classList.remove("active");
       } else {
-        smallScreenContent.style.display = "block";
-        smallScreenToggle.style.transform = "rotate(180deg)";
+        smallScreenToggle.classList.add("active");
+        smallScreenContent.classList.add("active");
       }
     });
   }
