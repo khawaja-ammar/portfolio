@@ -2,22 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .svg {
-  height: 20px;
-  width: 20px;
-} */
-
 @layer base {
   body {
+    @apply bg-primarycolor text-black dark:bg-primarycolor-dark dark:text-white;
     /* font-family: Arial, Helvetica, sans-serif; */
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
-  :root {
+  /* :root {
     color: black;
   }
   .dark {
     color: white;
-  }
+  } */
   a:hover {
     @apply opacity-50 duration-300;
   }
@@ -30,4 +26,13 @@
   h3 {
     @apply !text-base !font-bold md:!text-lg lg:!text-xl xl:!text-2xl 2xl:!text-3xl;
   }
+}
+
+@layer components {
+  .sectionContainer {
+    @apply flex w-full flex-col items-center rounded-2xl border-2 border-bordercolor border-opacity-25 bg-secondarycolor p-12 dark:bg-secondarycolor-dark;
+  }
+  /* .svg {
+
+  } */
 }
