@@ -46,7 +46,9 @@ const svgVectors = svgPath.substring(
   width={size}
   height={size}
   viewBox={svgViewBox}
-  class={`aspect-square ${className}`}
+  class={`aspect-square ${className} ${
+    icon === "react" && "animate-react-logo-spin"
+  }`}
 >
   <g set:html={svgVectors} />
 </svg>
