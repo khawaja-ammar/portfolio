@@ -4,6 +4,7 @@
 
 @layer base {
   body {
+    /* text-sm md:text-base lg:text-lg xl:text-xl */
     @apply bg-primarycolor text-black dark:bg-primarycolor-dark dark:text-white;
     font-family: "Atkinson Hyperlegible", sans-serif;
   }

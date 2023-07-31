@@ -1,56 +1,307 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SVGIcon, { Props as IconProps } from "../components/svg/SVGIcon.astro";
+import type { Props as IconProps } from "../components/svg/SVGIcon.astro";
+import LabeledIcon from "../components/ui/LabeledIcon.astro";
 
-const langaugeLinks: {
-  label: string;
+const langauge_DSLs: {
+  link: string;
   icon: IconProps["icon"];
+  label: string;
 }[] = [
   {
-    label: "javascript",
-    icon: "javascript",
+    link: "html",
+    icon: "lang_html",
+    label: "HTML",
+  },
+
+  {
+    link: "css",
+    icon: "lang_css",
+    label: "CSS",
   },
   {
-    label: "typescript",
-    icon: "typescript",
+    link: "sql",
+    icon: "lang_sql",
+    label: "SQL",
+  },
+];
+
+const langauge_programming: {
+  link: string;
+  icon: IconProps["icon"];
+  label: string;
+}[] = [
+  {
+    link: "javascript",
+    icon: "lang_javascript",
+    label: "Javascript",
   },
   {
-    label: "python",
-    icon: "python",
+    link: "typescript",
+    icon: "lang_typescript",
+    label: "Typescript",
   },
   {
-    label: "html",
-    icon: "html",
+    link: "python",
+    icon: "lang_python",
+    label: "Python",
   },
   {
-    label: "cplusplus",
-    icon: "cplusplus",
+    link: "cplusplus",
+    icon: "lang_cplusplus",
+    label: "C++",
   },
   {
-    label: "golang",
-    icon: "golang",
+    link: "golang",
+    icon: "lang_golang",
+    label: "Golang",
+  },
+];
+
+const frontEndLinks: {
+  link: string;
+  icon: IconProps["icon"];
+  label: string;
+}[] = [
+  {
+    link: "react",
+    icon: "react",
+    label: "React.js",
   },
   {
-    label: "css",
-    icon: "css",
+    link: "svelte",
+    icon: "svelte",
+    label: "Svelte",
+  },
+];
+
+const fullstackLinks: {
+  link: string;
+  icon: IconProps["icon"];
+  label: string;
+}[] = [
+  {
+    link: "nextjs",
+    icon: "nextjs",
+    label: "Next.js",
+  },
+  {
+    link: "astro",
+    icon: "astro",
+    label: "Astro",
+  },
+];
+
+const backEndLinks: {
+  link: string;
+  icon: IconProps["icon"];
+  label: string;
+}[] = [
+  {
+    link: "nodejs",
+    icon: "nodejs",
+    label: "Node.js",
+  },
+  {
+    link: "expressjs",
+    icon: "expressjs",
+    label: "Express.js",
+  },
+];
+
+const dbLinks: {
+  link: string;
+  icon: IconProps["icon"];
+  label: string;
+}[] = [
+  {
+    link: "postgresql",
+    icon: "postgres",
+    label: "PostgreSQL",
+  },
+  {
+    link: "mysql",
+    icon: "mysql",
+    label: "MySQL",
+  },
+  {
+    link: "mongodb",
+    icon: "mongodb",
+    label: "MongoDB",
+  },
+];
+
+const uiLibs: {
+  link: string;
+  icon: IconProps["icon"];
+  label: string;
+}[] = [
+  {
+    link: "tailwind",
+    icon: "lib_tailwind",
+    label: "TailwindCSS",
+  },
+  {
+    link: "daisyui",
+    icon: "lib_daisyui",
+    label: "DaisyUI",
+  },
+];
+
+const libraryLinks: {
+  link: string;
+  icon: IconProps["icon"];
+  label: string;
+}[] = [
+  {
+    link: "socketio",
+    icon: "lib_socketio",
+    label: "Socket.IO",
+  },
+  {
+    link: "jwt",
+    icon: "lib_jwt",
+    label: "JWT",
   },
 ];
 ---
 
 <BaseLayout title="Skills">
-  <main>
+  <main class="flex flex-col gap-12">
     <section class="sectionContainer">
-      <h3>Languages</h3>
-      <div class="flex gap-12 text-5xl">
-        {
-          langaugeLinks.map((link) => (
-            <a href={`/tags/${link.label}`}>
-              <SVGIcon icon={link.icon} />
-            </a>
-          ))
-        }
+      <div class="flex w-full justify-between">
+        <h2>Languages</h2>
+      </div>
+      <div
+        class="flex w-full flex-col gap-10 text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
+      >
+        <div class="flex flex-col gap-4">
+          <div class="flex justify-center gap-8">
+            {
+              langauge_DSLs.map((link) => (
+                <LabeledIcon
+                  link={link.link}
+                  label={link.label}
+                  icon={link.icon}
+                />
+              ))
+            }
+          </div>
+          <div class="flex justify-center gap-8">
+            {
+              langauge_programming.map((link) => (
+                <LabeledIcon
+                  link={link.link}
+                  label={link.label}
+                  icon={link.icon}
+                />
+              ))
+            }
+          </div>
+        </div>
       </div>
     </section>
-    <section>Techs</section>
+
+    <section class="sectionContainer">
+      <div class="flex w-full justify-between">
+        <h2>Frameworks</h2>
+      </div>
+      <div
+        class="flex w-full flex-col gap-10 text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
+      >
+        <div class="flex flex-col gap-4">
+          <div class="flex justify-center gap-8">
+            {
+              frontEndLinks.map((link) => (
+                <LabeledIcon
+                  link={link.link}
+                  label={link.label}
+                  icon={link.icon}
+                />
+              ))
+            }
+          </div>
+          <div class="flex justify-center gap-8">
+            {
+              fullstackLinks.map((link) => (
+                <LabeledIcon
+                  link={link.link}
+                  label={link.label}
+                  icon={link.icon}
+                />
+              ))
+            }
+          </div>
+          <div class="flex justify-center gap-8">
+            {
+              backEndLinks.map((link) => (
+                <LabeledIcon
+                  link={link.link}
+                  label={link.label}
+                  icon={link.icon}
+                />
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectionContainer">
+      <div class="flex w-full justify-between">
+        <h2>Databases</h2>
+      </div>
+      <div
+        class="flex w-full flex-col gap-10 text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
+      >
+        <div class="flex flex-col gap-4">
+          <div class="flex justify-center gap-8">
+            {
+              dbLinks.map((link) => (
+                <LabeledIcon
+                  link={link.link}
+                  label={link.label}
+                  icon={link.icon}
+                />
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectionContainer">
+      <div class="flex w-full justify-between">
+        <h2>Libraries</h2>
+      </div>
+      <div
+        class="flex w-full flex-col gap-10 text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
+      >
+        <div class="flex flex-col gap-4">
+          <div class="flex justify-center gap-8">
+            {
+              uiLibs.map((link) => (
+                <LabeledIcon
+                  link={link.link}
+                  label={link.label}
+                  icon={link.icon}
+                />
+              ))
+            }
+          </div>
+          <div class="flex justify-center gap-8">
+            {
+              libraryLinks.map((link) => (
+                <LabeledIcon
+                  link={link.link}
+                  label={link.label}
+                  icon={link.icon}
+                />
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </BaseLayout>

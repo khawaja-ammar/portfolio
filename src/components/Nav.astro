@@ -4,27 +4,27 @@ import CursorAnimation from "./ui/CursorAnimation.astro";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Skills", href: "/skills/" },
-  { label: "Work", href: "/work/" },
-  { label: "About", href: "/about/" },
+  { label: "Skills", href: "/skills" },
+  { label: "Work", href: "/work" },
+  { label: "About", href: "/about" },
 ];
 
 const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
   {
     label: "GitHub",
     href: "https://github.com/khawaja-ammar",
-    icon: "logoGithub",
+    icon: "logo_github",
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/ammar-khawaja-393680158/",
-    icon: "logoLinkedIn",
+    icon: "logo_linkedIn",
   },
-  {
-    label: "Upwork",
-    href: "https://www.upwork.com/freelancers/~0153e26e88914b29a4",
-    icon: "logoUpwork",
-  },
+  // {
+  //   label: "Upwork",
+  //   href: "https://www.upwork.com/freelancers/~0153e26e88914b29a4",
+  //   icon: "logo_upwork",
+  // },
   {
     label: "Email",
     href: "mailto:mammarkh@gmail.com",
@@ -54,7 +54,7 @@ const url = Astro.url.pathname;
       navItems.map(({ label, href }) => (
         <li class="list-none">
           <a
-            class={`rounded-full px-2 py-1 duration-300  ${
+            class={`rounded-full px-2 py-1  ${
               url === href
                 ? "bg-accentcolor text-white hover:opacity-100 dark:text-black"
                 : "hover:bg-accentcolor-light hover:text-white hover:opacity-50 dark:hover:text-black"
@@ -82,7 +82,7 @@ const url = Astro.url.pathname;
     </div> -->
     <div
       id="dark_mode_container"
-      class="hidden duration-300 hover:cursor-pointer hover:opacity-50 md:flex"
+      class="hidden hover:cursor-pointer hover:opacity-50 md:flex"
     >
       <SVGIcon icon="darkMode" className="inline dark:hidden" />
       <SVGIcon icon="lightMode" color="white" className="hidden dark:inline" />
@@ -92,7 +92,7 @@ const url = Astro.url.pathname;
     <div class="hidden items-center gap-4 pr-2 md:flex">
       {
         iconLinks.map(({ href, icon, label }) => (
-          <a href={href} target="_blank" class="duration-300 hover:opacity-50">
+          <a href={href} target="_blank" class=" hover:opacity-50">
             <span class="sr-only">{label}</span>
             <SVGIcon icon={icon} className="dark:fill-white" />
           </a>
@@ -109,7 +109,7 @@ const url = Astro.url.pathname;
     <!-- Small Screen Toggle -->
     <div class="relative flex flex-col items-center lg:hidden">
       <button
-        class="z-20 rotate-0 duration-75 hover:cursor-pointer [&.is-active]:rotate-180"
+        class="z-20 rotate-0 hover:cursor-pointer [&.is-active]:rotate-180"
         id="smallscreen-toggle"
       >
         <SVGIcon icon="downArrow" className="fill-orange-500 " />
@@ -125,7 +125,7 @@ const url = Astro.url.pathname;
             navItems.map(({ label, href }) => (
               <li>
                 <a
-                  class={`duration-300  ${
+                  class={`${
                     url === href ? "text-accentcolor" : "hover:opacity-50"
                   }`}
                   href={href}

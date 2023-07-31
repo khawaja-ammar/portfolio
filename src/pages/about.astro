@@ -1,16 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import * as AboutContent from "../content/aboutPage.md";
 ---
 
 <BaseLayout title="About">
-  <main>About</main>
-  My interest in programming stems from gaming much like many others from my generation
-  <br />
-  WHat type of person are u <br />
-  whats important to u => perfectionist <br />
-  life ethos <br />
-  inspirations => Musashi, Marcus Auralius<br />
-  goals <br />
-  as u can tell from the website im a minimilist by heart <br />
-  Neovim <br />
+  <main class="sectionContainer">
+    <section
+      class="!prose !prose-quoteless mx-auto dark:!prose-invert lg:!prose-lg xl:!prose-xl 2xl:!prose-2xl"
+    >
+      <AboutContent.Content />
+    </section>
+  </main>
 </BaseLayout>

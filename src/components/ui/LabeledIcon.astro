@@ -1,0 +1,18 @@
+---
+import SVGIcon, { Props as IconProps } from "../svg/SVGIcon.astro";
+
+export interface Props {
+  icon: IconProps["icon"];
+  link: string;
+  label: string;
+}
+
+const { link, icon, label } = Astro.props;
+---
+
+<a class="flex flex-col items-center gap-2" href={`/tags/${link}`}>
+  <SVGIcon icon={icon} />
+  <p class="text-xs text-gray-600 dark:text-gray-100 md:text-sm">
+    {label}
+  </p>
+</a>

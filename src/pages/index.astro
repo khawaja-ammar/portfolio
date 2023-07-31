@@ -1,60 +1,76 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SVGIcon, { Props as IconProps } from "../components/svg/SVGIcon.astro";
+import type { Props as IconProps } from "../components/svg/SVGIcon.astro";
+import LabeledIcon from "../components/ui/LabeledIcon.astro";
 
 const frontEndLinks: {
-  label: string;
+  link: string;
   icon: IconProps["icon"];
+  label: string;
 }[] = [
   {
-    label: "react",
+    link: "react",
     icon: "react",
+    label: "React.js",
   },
-  // {
-  //   label: "vue",
-  //   icon: "vue",
-  // },
   {
-    label: "tailwind",
-    icon: "tailwind",
+    link: "svelte",
+    icon: "svelte",
+    label: "Svelte",
   },
 ];
 
 const backEndLinks: {
-  label: string;
+  link: string;
   icon: IconProps["icon"];
+  label: string;
 }[] = [
-  {
-    label: "nextjs",
-    icon: "nextjs",
-  },
-  {
-    label: "expressjs",
-    icon: "expressjs",
-  },
   // {
-  //   label: "nuxtjs",
-  //   icon: "nuxtjs",
+  //   link: "nodejs",
+  //   icon: "nodejs",
+  //   label: "Node.js",
   // },
+  {
+    link: "expressjs",
+    icon: "expressjs",
+    label: "Express.js",
+  },
+  {
+    link: "nextjs",
+    icon: "nextjs",
+    label: "Next.js",
+  },
 ];
 
 const dbLinks: {
-  label: string;
+  link: string;
   icon: IconProps["icon"];
+  label: string;
 }[] = [
   {
-    label: "postgresql",
+    link: "postgresql",
     icon: "postgres",
+    label: "PostgreSQL",
   },
   {
-    label: "mysql",
+    link: "mysql",
     icon: "mysql",
+    label: "MySQL",
   },
   {
-    label: "mongodb",
+    link: "mongodb",
     icon: "mongodb",
+    label: "MongoDB",
   },
 ];
+
+// TODO:
+// Header
+// Technologies
+// Select projects
+// About me summary
+// CTA
+// Footer
 ---
 
 <BaseLayout title="Khawaja Ammar" description="Khawaja Ammar's Portfolio">
@@ -63,7 +79,7 @@ const dbLinks: {
       class="flex flex-col items-center justify-center gap-12 sm:flex-row sm:gap-4"
     >
       <div class="basis-full sm:basis-2/3">
-        <h1>Full Stack Engineer 👋🏻</h1>
+        <h1>Full Stack Engineer</h1>
         <p class="">
           Hi, I'm Ammar, a passionate programmer currently based in Pakistan. 📍
         </p>
@@ -78,9 +94,9 @@ const dbLinks: {
     </section>
 
     <section class="sectionContainer">
-      <div class="flex w-full justify-between">
-        <h2>Frameworks</h2>
-        <a class="self-end text-accentcolor" href="/skills">See all...</a>
+      <div class="flex w-full justify-between pb-12">
+        <h2>Tech Stacks</h2>
+        <a class="self-end text-accentcolor" href="/skills">✨ See more...</a>
       </div>
       <div
         class="flex w-full flex-col gap-10 text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
@@ -90,9 +106,11 @@ const dbLinks: {
           <div class="flex justify-center gap-8">
             {
               frontEndLinks.map((link) => (
-                <a href={`/tags/${link.label}`}>
-                  <SVGIcon icon={link.icon} />
-                </a>
+                <LabeledIcon
+                  link={link.link}
+                  label={link.label}
+                  icon={link.icon}
+                />
               ))
             }
           </div>
@@ -103,9 +121,11 @@ const dbLinks: {
           <div class="flex justify-center gap-8">
             {
               backEndLinks.map((link) => (
-                <a href={`/tags/${link.label}`}>
-                  <SVGIcon icon={link.icon} />
-                </a>
+                <LabeledIcon
+                  link={link.link}
+                  label={link.label}
+                  icon={link.icon}
+                />
               ))
             }
           </div>
@@ -116,9 +136,11 @@ const dbLinks: {
           <div class="flex justify-center gap-8">
             {
               dbLinks.map((link) => (
-                <a href={`/tags/${link.label}`}>
-                  <SVGIcon icon={link.icon} />
-                </a>
+                <LabeledIcon
+                  link={link.link}
+                  label={link.label}
+                  icon={link.icon}
+                />
               ))
             }
           </div>
@@ -129,7 +151,7 @@ const dbLinks: {
     <section class="sectionContainer">
       <div class="flex w-full justify-between">
         <h2>Projects</h2>
-        <a class="self-end text-accentcolor" href="/work">See all...</a>
+        <a class="self-end text-accentcolor" href="/work">See more...</a>
       </div>
       <div>
         <div class="basis-full">
@@ -151,6 +173,36 @@ const dbLinks: {
             reiciendis?
           </p>
         </div>
+      </div>
+    </section>
+
+    <section class="sectionContainer">
+      <div class="flex w-full justify-between">
+        <h2>About Me</h2>
+        <a class="self-end text-accentcolor" href="/about">See more...</a>
+      </div>
+      <div>
+        <br />
+        <p>
+          <span
+            >I started programming around the last year of my high school (2015)
+            and fell in love, got a Bachelors in Computer Science and went on to
+            become a Full Stack developer.</span
+          ><br /><br />
+          <span
+            >I am passionate about programming, have about 3 years experience
+            working with React.js and node.js + express.js designing an in-house
+            planning system for my previous company.</span
+          ><br /><br />
+          <span>
+            Have also been Freelancing on and off making websites for local
+            businesses using Typescript + React + Next.js or Astro.</span
+          ><br /><br />
+          <span
+            >In my spare time I try to learn and read-up on various articles and
+            blogs that can help me become a better programmer.</span
+          >
+        </p>
       </div>
     </section>
   </main>
