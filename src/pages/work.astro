@@ -1,17 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import * as Experiance from "../content/static/experiance.md";
 ---
 
 <BaseLayout title="Work">
-  <main class="flex flex-col gap-4">
-    <h2>Search Engine for tags</h2>
-    <section class="flex gap-8">
-      <div class="sectionContainer">
-        <h2>Projects</h2>
-      </div>
-      <div class="sectionContainer">
-        <h2>Experiance</h2>
-      </div>
-    </section>
+  <main class="sectionContainer">
+    <!-- <h2>Search Engine for tags</h2> -->
+    <div
+      class="!prose !prose-quoteless mx-auto dark:!prose-invert lg:!prose-lg xl:!prose-xl 2xl:!prose-2xl lg:min-w-[750px] xl:min-w-[900px] 2xl:min-w-[1000px]"
+    >
+      <Experiance.Content />
+    </div>
   </main>
 </BaseLayout>
