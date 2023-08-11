@@ -12,6 +12,11 @@ const navItems = [
 
 const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
   {
+    label: "CV",
+    href: "/main.pdf",
+    icon: "cv",
+  },
+  {
     label: "GitHub",
     href: "https://github.com/khawaja-ammar",
     icon: "logo_github",
@@ -69,18 +74,6 @@ const url = Astro.url.pathname;
     }
   </ul>
   <div class="flex items-center gap-6">
-    <!-- <div
-      class="hidden rounded-full border-2 border-bordercolor dark:border-bordercolor-dark border-opacity-25 bg-secondarycolor p-3 dark:bg-secondarycolor-dark lg:flex"
-    >
-      <a
-        href="/blogs/"
-        class={`rounded-full px-2 py-1 duration-300 ${
-          url === "/blogs/"
-            ? "bg-accentcolor text-white dark:text-black hover:opacity-100"
-            : "hover:bg-accentcolor-light hover:text-white hover:opacity-50 dark:hover:text-black"
-        }`}>Blog</a
-      >
-    </div> -->
     <div
       id="dark_mode_container"
       class="hidden hover:cursor-pointer hover:opacity-50 md:flex"
