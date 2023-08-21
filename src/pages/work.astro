@@ -1,16 +1,34 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SVGIcon from "../components/svg/SVGIcon.astro";
 // import * as Experiance from "../content/static/experience.md";
 ---
 
 <BaseLayout title="Work">
-  <main class="">
-    <iframe
+  <main class="relative">
+    <a
+      class="absolute right-8 top-4 text-xs lg:text-base 2xl:text-xl"
+      href="/ammarProfile.pdf"
+      download><SVGIcon icon="download" className="fill-accentcolor" /></a
+    >
+    <img
+      src="ammarProfile.png"
+      alt="resume"
+      class="w-full rounded-lg border-2 border-bordercolor border-opacity-25 dark:border-bordercolor-dark"
+    />
+    <!-- <div class="aspect-square w-1/2 justify-center sm:basis-1/3">
+      <img
+        class="rounded-full border-2 border-bordercolor border-opacity-25 dark:border-bordercolor-dark sm:rounded-lg"
+        src="profile.jpg"
+        alt="profilepicture"
+      />
+    </div> -->
+    <!-- <iframe
       src="/ammarProfile.pdf"
       class="h-[500px] w-full rounded-lg border-2 border-bordercolor border-opacity-25 dark:border-bordercolor-dark sm:h-[600px] md:h-[800px] lg:h-[900px] xl:h-[1000px] 2xl:h-[1200px]"
       ><p> Unable to display PDF file. <a href="/ammarProfile.pdf">Download</a>
       instead. </p></iframe
-    >
+    > -->
     <!-- <div
       class="!prose !prose-quoteless mx-auto dark:!prose-invert lg:!prose-lg xl:!prose-xl 2xl:!prose-2xl lg:min-w-[750px] xl:min-w-[900px] 2xl:min-w-[1000px]"
     >
