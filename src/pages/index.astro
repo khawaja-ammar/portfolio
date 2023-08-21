@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { Props as IconProps } from "../components/svg/SVGIcon.astro";
 import LabeledIcon from "../components/ui/LabeledIcon.astro";
+import SVGIcon from "../components/svg/SVGIcon.astro";
 
 const frontEndLinks: {
   link: string;
@@ -63,17 +64,9 @@ const dbLinks: {
     label: "MongoDB",
   },
 ];
-
-// TODO:
-// Header
-// Technologies
-// Select projects
-// About me summary
-// CTA
-// Footer
 ---
 
-<BaseLayout title="Khawaja Ammar" description="Khawaja Ammar's Portfolio">
+<BaseLayout title="Ammar" description="Khawaja Ammar's Portfolio">
   <main class="flex flex-col items-center justify-center gap-20">
     <section
       class="flex flex-col items-center justify-center gap-12 sm:flex-row sm:gap-4"
@@ -94,7 +87,7 @@ const dbLinks: {
     </section>
 
     <section class="sectionContainer">
-      <div class="flex w-full justify-between pb-12">
+      <div class="flex w-full justify-between pb-6">
         <h2>Tech Stacks</h2>
         <a class="self-end text-accentcolor" href="/skills">✨ See more...</a>
       </div>
@@ -149,40 +142,89 @@ const dbLinks: {
     </section>
 
     <section class="sectionContainer">
-      <div class="flex w-full justify-between">
+      <div class="flex w-full justify-between pb-6">
         <h2>Projects</h2>
-        <a class="self-end text-accentcolor" href="/work">See more...</a>
+        <a class="self-end text-accentcolor" href="/projects">✨ See more...</a>
       </div>
       <div>
         <div class="basis-full">
-          <h3>Full Stack Engineer</h3>
-          <p>I am the Lord of all that is golden</p>
+          <a
+            href="https://github.com/khawaja-ammar/chatting_MERN"
+            target="_blank"
+            class="flex items-center gap-2"
+          >
+            <h3>MERN Chatting App</h3>
+            <SVGIcon
+              icon="externallink"
+              className="text-xs lg:text-sm dark:fill-white"
+            />
+          </a>
+          <ul class="list-disc pl-6">
+            <li>
+              Developed a full-stack web application using express.js serving
+              REST APIs with React and tailwindcss + daisyUI as the frontend
+            </li>
+            <li>
+              Authorization and authentication done using JSON web tokens (JWT)
+              for secure sessions
+            </li>
+            <li>
+              Implemented Real-time communication between clients using
+              Socket.IO (including message indicators)
+            </li>
+            <li>
+              Client information and messages stored in MongoDB instance for
+              faster reads
+            </li>
+          </ul>
         </div>
-
+        <br />
         <div class="basis-full">
-          <h3>Hello</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error quod
-            cupiditate quam maiores sint aut.
-          </p>
+          <a
+            href="https://github.com/khawaja-ammar/pythonP2P"
+            target="_blank"
+            class="flex items-center gap-2"
+          >
+            <h3>Peer-to-peer File Sharing (Python)</h3>
+            <SVGIcon
+              icon="externallink"
+              className="text-xs lg:text-sm dark:fill-white"
+            />
+          </a>
+          <ul class="list-disc pl-6">
+            <li>
+              Engineered a Chord-like p2p node for sharing files with other
+              nodes on request
+            </li>
+            <li>Implemented Finger tables for O(log N) lookup time</li>
+            <li>
+              “Stabilization” stage and file redundancy implemented to minimize
+              risk of file loss
+            </li>
+          </ul>
         </div>
-        <div class="basis-full">
-          <h3>Hello</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
-            reiciendis?
-          </p>
-        </div>
+        <!-- <div class="basis-full">
+          <a
+            href="https://github.com/khawaja-ammar/"
+            target="_blank"
+            class="flex items-center gap-2"
+          >
+            <h3>HEADING</h3>
+            <SVGIcon icon="externallink" className="text-xs lg:text-sm dark:fill-white" />
+          </a>
+          <ul class="list-disc pl-6">
+            <li>ITEM 1</li>
+          </ul>
+        </div> -->
       </div>
     </section>
 
     <section class="sectionContainer">
-      <div class="flex w-full justify-between">
+      <div class="flex w-full justify-between pb-6">
         <h2>About Me</h2>
-        <a class="self-end text-accentcolor" href="/about">See more...</a>
+        <a class="self-end text-accentcolor" href="/about">✨ See more...</a>
       </div>
       <div>
-        <br />
         <p>
           <span
             >I started programming around the last year of my high school (2015)
