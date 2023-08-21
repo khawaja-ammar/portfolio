@@ -1,3 +1,10 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<main>Page not found</main>
+
+<BaseLayout title="Page Not Found">
+  <main class="flex flex-col items-center justify-center gap-4">
+    <h3>Page does not exist</h3>
+    <p>Go back <span class="text-accentcolor"><a href="/">Home 🏠</a></span></p>
+  </main>
+</BaseLayout>
