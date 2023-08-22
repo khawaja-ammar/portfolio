@@ -67,6 +67,7 @@ const url = Astro.url.pathname;
     <div
       id="dark_mode_container"
       class="hidden hover:cursor-pointer hover:opacity-50 md:flex"
+      title="Switch Theme"
     >
       <SVGIcon icon="darkMode" className="inline dark:hidden" />
       <SVGIcon icon="lightMode" color="white" className="hidden dark:inline" />
@@ -76,7 +77,12 @@ const url = Astro.url.pathname;
     <div class="hidden items-center gap-4 pr-2 md:flex">
       {
         iconLinks.map(({ href, icon, label }) => (
-          <a href={href} target="_blank" class=" hover:opacity-50">
+          <a
+            href={href}
+            target="_blank"
+            class=" hover:opacity-50"
+            title={label}
+          >
             <span class="sr-only">{label}</span>
             <SVGIcon icon={icon} className="dark:fill-white" />
           </a>
@@ -124,6 +130,7 @@ const url = Astro.url.pathname;
           <div
             id="smallscreen-dark_mode_container"
             class="flex duration-300 hover:cursor-pointer hover:opacity-50"
+            title="Switch Theme"
           >
             <SVGIcon icon="darkMode" className="inline dark:hidden" />
             <SVGIcon
@@ -140,6 +147,7 @@ const url = Astro.url.pathname;
                   href={href}
                   target="_blank"
                   class="duration-300 hover:opacity-50"
+                  title={label}
                 >
                   <span class="sr-only">{label}</span>
                   <SVGIcon icon={icon} className="dark:fill-white" />
