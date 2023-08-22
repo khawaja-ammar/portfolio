@@ -148,7 +148,7 @@ const uiLibs: {
   },
 ];
 
-const libraryLinks: {
+const miscLibs: {
   link: string;
   icon: IconProps["icon"];
   label: string;
@@ -167,6 +167,18 @@ const libraryLinks: {
     link: "jwt",
     icon: "lib_jwt",
     label: "JWT",
+  },
+];
+
+const testingLibs: {
+  link: string;
+  icon: IconProps["icon"];
+  label: string;
+}[] = [
+  {
+    link: "jestjs",
+    icon: "lib_jestjs",
+    label: "Jest.js",
   },
 ];
 ---
@@ -296,7 +308,18 @@ const libraryLinks: {
           </div>
           <div class="flex justify-center gap-8">
             {
-              libraryLinks.map((link) => (
+              miscLibs.map((link) => (
+                <LabeledIcon
+                  link={link.link}
+                  label={link.label}
+                  icon={link.icon}
+                />
+              ))
+            }
+          </div>
+          <div class="flex justify-center gap-8">
+            {
+              testingLibs.map((link) => (
                 <LabeledIcon
                   link={link.link}
                   label={link.label}

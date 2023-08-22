@@ -4,31 +4,25 @@
 
 @layer base {
   body {
-    /* text-sm md:text-base lg:text-lg xl:text-xl */
-    @apply bg-primarycolor text-black dark:bg-primarycolor-dark dark:text-white;
+    @apply bg-primarycolor text-[#374151] dark:bg-primarycolor-dark dark:text-[#d1d5db];
     font-family: "Source Sans 3", sans-serif;
   }
   nav {
     font-family: "Fira Code", monospace;
     font-variant-ligatures: common-ligatures;
+    @apply text-black dark:text-white;
   }
-  /* :root {
-    color: black;
-  }
-  .dark {
-    color: white;
-  } */
   a:hover {
     @apply opacity-50 duration-300;
   }
   h1 {
-    @apply !text-xl !font-bold md:!text-2xl lg:!text-3xl xl:!text-4xl 2xl:!text-5xl;
+    @apply !text-xl !font-bold text-[#111827] dark:text-white md:!text-2xl lg:!text-3xl xl:!text-4xl 2xl:!text-5xl;
   }
   h2 {
-    @apply !text-lg !font-bold md:!text-xl lg:!text-2xl xl:!text-3xl 2xl:!text-4xl;
+    @apply !text-lg !font-bold text-[#111827] dark:text-white md:!text-xl lg:!text-2xl xl:!text-3xl 2xl:!text-4xl;
   }
   h3 {
-    @apply !text-base !font-bold md:!text-lg lg:!text-xl xl:!text-2xl 2xl:!text-3xl;
+    @apply !text-base !font-bold text-[#111827] dark:text-white md:!text-lg lg:!text-xl xl:!text-2xl 2xl:!text-3xl;
   }
 }
 
