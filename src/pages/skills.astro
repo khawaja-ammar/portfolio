@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import type { Props as IconProps } from "../components/svg/SVGIcon.astro";
 import LabeledIcon from "../components/ui/LabeledIcon.astro";
 
-const langauge_DSLs: {
+const language_DSLs: {
   link: string;
   icon: IconProps["icon"];
   label: string;
@@ -26,7 +26,7 @@ const langauge_DSLs: {
   },
 ];
 
-const langauge_programming: {
+const language_programming: {
   link: string;
   icon: IconProps["icon"];
   label: string;
@@ -131,7 +131,16 @@ const dbLinks: {
   },
 ];
 
-const uiLibs: {
+// const saasLinks: {
+//   link: string;
+//   icon: IconProps["icon"];
+//   label: string;
+// }[] = [
+//   Firebase
+//   Supabase
+// ];
+
+const uiLibLinks: {
   link: string;
   icon: IconProps["icon"];
   label: string;
@@ -148,7 +157,7 @@ const uiLibs: {
   },
 ];
 
-const miscLibs: {
+const miscLibLinks: {
   link: string;
   icon: IconProps["icon"];
   label: string;
@@ -170,7 +179,7 @@ const miscLibs: {
   },
 ];
 
-const testingLibs: {
+const testingLibLinks: {
   link: string;
   icon: IconProps["icon"];
   label: string;
@@ -195,7 +204,7 @@ const testingLibs: {
         <div class="flex flex-col gap-4">
           <div class="flex justify-center gap-8">
             {
-              langauge_DSLs.map((link) => (
+              language_DSLs.map((link) => (
                 <LabeledIcon
                   link={link.link}
                   label={link.label}
@@ -206,7 +215,7 @@ const testingLibs: {
           </div>
           <div class="flex justify-center gap-8">
             {
-              langauge_programming.map((link) => (
+              language_programming.map((link) => (
                 <LabeledIcon
                   link={link.link}
                   label={link.label}
@@ -297,7 +306,7 @@ const testingLibs: {
         <div class="flex flex-col gap-4">
           <div class="flex justify-center gap-8">
             {
-              uiLibs.map((link) => (
+              uiLibLinks.map((link) => (
                 <LabeledIcon
                   link={link.link}
                   label={link.label}
@@ -308,7 +317,7 @@ const testingLibs: {
           </div>
           <div class="flex justify-center gap-8">
             {
-              miscLibs.map((link) => (
+              miscLibLinks.map((link) => (
                 <LabeledIcon
                   link={link.link}
                   label={link.label}
@@ -319,7 +328,7 @@ const testingLibs: {
           </div>
           <div class="flex justify-center gap-8">
             {
-              testingLibs.map((link) => (
+              testingLibLinks.map((link) => (
                 <LabeledIcon
                   link={link.link}
                   label={link.label}
