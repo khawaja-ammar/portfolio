@@ -17,7 +17,7 @@ Used PNPM to build
 
 ## Roadmap
 
-- [x] **Bug**: The js code that listens to events outside the small screen nav bar should close automatically as if small nav is open and we switch to big screen
+- [x] ~~**Bug**: The js code that listens to events outside the small screen nav bar should close automatically as if small nav is open and we switch to big screen~~
 - [ ] **Feature**: Make "projects" page with tags?
 - [ ] **Feature**: Blog with a search functionality and tags (links in with projects)
 - [ ] **Feature**: Collapsible headings for blog and about page (where ever .md is used)
