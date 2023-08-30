@@ -21,4 +21,7 @@ pnpm-debug.log*
 .DS_Store
 
 .vscode
+
+# in-progress
 temp
+src/pages/projects.astro
