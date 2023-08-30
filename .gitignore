@@ -24,4 +24,4 @@ pnpm-debug.log*
 
 # in-progress
 temp
-projects.astro
+src/pages/projects.astro
