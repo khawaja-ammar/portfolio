@@ -161,6 +161,7 @@ const url = Astro.url.pathname;
   </div>
 </nav>
 
+<!-- script for changing themes -->
 <script>
   const container = document.getElementById("dark_mode_container");
   const smallScreenContainer = document.getElementById(
@@ -183,39 +184,45 @@ const url = Astro.url.pathname;
   }
 </script>
 
+<!-- script of small screen toggle button -->
 <script>
   const smallScreenToggle = document.getElementById("smallscreen-toggle");
   const smallScreenModal = document.getElementById("smallscreen-modal");
   const smallScreenContent = document.getElementById("smallscreen-content");
 
   if (smallScreenToggle && smallScreenContent && smallScreenModal) {
-    smallScreenToggle.addEventListener("click", () => {
+    let active = false;
+
+    const setActive = () => {
       if (smallScreenToggle.classList.contains("is-active")) {
         smallScreenToggle.classList.remove("is-active");
         smallScreenModal.classList.remove("is-active");
         smallScreenContent.classList.remove("is-active");
-
-        smallScreenModal.removeEventListener("click", () => {
-          smallScreenToggle.classList.remove("is-active");
-          smallScreenModal.classList.remove("is-active");
-          smallScreenContent.classList.remove("is-active");
-        });
       } else {
         smallScreenToggle.classList.add("is-active");
         smallScreenModal.classList.add("is-active");
         smallScreenContent.classList.add("is-active");
+      }
+    };
 
-        smallScreenModal.addEventListener("click", () => {
-          smallScreenToggle.classList.remove("is-active");
-          smallScreenModal.classList.remove("is-active");
-          smallScreenContent.classList.remove("is-active");
+    if (window.innerWidth < 1024) {
+      smallScreenToggle.addEventListener("click", setActive);
+      active = true;
+    }
 
-          smallScreenModal.removeEventListener("click", () => {
-            smallScreenToggle.classList.remove("is-active");
-            smallScreenModal.classList.remove("is-active");
-            smallScreenContent.classList.remove("is-active");
-          });
-        });
+    addEventListener("resize", () => {
+      if (window.innerWidth > 1023 && active) {
+        smallScreenToggle.classList.remove("is-active");
+        smallScreenModal.classList.remove("is-active");
+        smallScreenContent.classList.remove("is-active");
+
+        smallScreenToggle.removeEventListener("click", setActive);
+        active = false;
+      } else {
+        if (!active) {
+          smallScreenToggle.addEventListener("click", setActive);
+          active = true;
+        }
       }
     });
   }
