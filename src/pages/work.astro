@@ -1,9 +1,6 @@
 ---
-import { Image } from "astro:assets";
-
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SVGIcon from "../components/svg/SVGIcon.astro";
-import resumePicture from "../assets/ammarProfile.jpg";
 ---
 
 <BaseLayout
@@ -17,8 +14,8 @@ import resumePicture from "../assets/ammarProfile.jpg";
       title="Download Resume"
       download><SVGIcon icon="download" /></a
     >
-    <Image
-      src={resumePicture}
+    <img
+      src="src/assets/ammarProfile.jpg"
       alt="resume"
       class="rounded-lg border-2 border-bordercolor border-opacity-25 dark:border-bordercolor-dark"
     />
