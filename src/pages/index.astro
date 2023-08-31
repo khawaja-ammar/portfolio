@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { Props as IconProps } from "../components/svg/SVGIcon.astro";
 import LabeledIcon from "../components/ui/LabeledIcon.astro";
-import SVGIcon from "../components/svg/SVGIcon.astro";
+import ProjectComponent from "../components/ui/ProjectComponent.astro";
 
 const frontEndLinks: {
   link: string;
@@ -153,75 +153,28 @@ const dbLinks: {
         <!-- <a class="self-end text-accentcolor" href="/projects">✨ See more...</a> -->
       </div>
       <div>
-        <div class="basis-full">
-          <a
-            href="https://github.com/khawaja-ammar/chatting_MERN"
-            target="_blank"
-            class="flex items-center gap-2"
-          >
-            <h3>MERN Chatting App</h3>
-            <SVGIcon
-              icon="externallink"
-              className="text-xs lg:text-sm dark:fill-white"
-            />
-          </a>
-          <ul class="list-disc pl-6">
-            <li>
-              Developed a full-stack web application using express.js serving
-              REST APIs with React and tailwindcss + daisyUI as the frontend
-            </li>
-            <li>
-              Authorization and authentication done using JSON web tokens (JWT)
-              for secure sessions
-            </li>
-            <li>
-              Implemented Real-time communication between clients using
-              Socket.IO (including message indicators)
-            </li>
-            <li>
-              Client information and messages stored in MongoDB instance for
-              faster reads
-            </li>
-          </ul>
-        </div>
+        <ProjectComponent
+          link="https://github.com/khawaja-ammar/chatting_MERN"
+          title="MERN Chatting App"
+          skills={["javascript", "react", "express", "node", "mongodb"]}
+          points={[
+            " Developed a full-stack web application using express.js serving REST APIs with React and tailwindcss + daisyUI as the frontend",
+            "Authorization and authentication done using JSON web tokens (JWT) for secure sessions",
+            "Implemented Real-time communication between clients using Socket.IO (including message indicators)",
+            "Client information and messages stored in MongoDB instance for faster reads",
+          ]}
+        />
         <br />
-        <div class="basis-full">
-          <a
-            href="https://github.com/khawaja-ammar/pythonP2P"
-            target="_blank"
-            class="flex items-center gap-2"
-          >
-            <h3>Peer-to-peer File Sharing (Python)</h3>
-            <SVGIcon
-              icon="externallink"
-              className="text-xs lg:text-sm dark:fill-white"
-            />
-          </a>
-          <ul class="list-disc pl-6">
-            <li>
-              Engineered a Chord-like p2p node for sharing files with other
-              nodes on request
-            </li>
-            <li>Implemented Finger tables for O(log N) lookup time</li>
-            <li>
-              “Stabilization” stage and file redundancy implemented to minimize
-              risk of file loss
-            </li>
-          </ul>
-        </div>
-        <!-- <div class="basis-full">
-          <a
-            href="https://github.com/khawaja-ammar/"
-            target="_blank"
-            class="flex items-center gap-2"
-          >
-            <h3>HEADING</h3>
-            <SVGIcon icon="externallink" className="text-xs lg:text-sm dark:fill-white" />
-          </a>
-          <ul class="list-disc pl-6">
-            <li>ITEM 1</li>
-          </ul>
-        </div> -->
+        <ProjectComponent
+          link="https://github.com/khawaja-ammar/pythonP2P"
+          title="Peer-to-peer File Sharing (Python)"
+          skills={["python", "sockets", "oop"]}
+          points={[
+            "Engineered a Chord-like p2p node for sharing files with other nodes on request",
+            "Implemented Finger tables for O(log N) lookup time",
+            "“Stabilization” stage and file redundancy implemented to minimize risk of file loss",
+          ]}
+        />
       </div>
     </section>
 
