@@ -1,11 +1,12 @@
 ---
 import SVGIcon from "../svg/SVGIcon.astro";
+import type { tagData } from "../../types";
 
 export interface Props {
   link: string;
   title: string;
   points: string[];
-  tags: string[];
+  tags: tagData[];
   image?: string;
 }
 

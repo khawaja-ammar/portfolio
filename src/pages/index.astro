@@ -1,16 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { Props as IconProps } from "../components/svg/SVGIcon.astro";
+import type { tagData } from "../types";
 import LabeledIcon from "../components/ui/LabeledIcon.astro";
 import ProjectComponent from "../components/ui/ProjectComponent.astro";
 
 const frontEndLinks: {
-  link: string;
+  tag: tagData;
   icon: IconProps["icon"];
   label: string;
 }[] = [
   {
-    link: "react",
+    tag: "react",
     icon: "react",
     label: "React.js",
   },
@@ -22,7 +23,7 @@ const frontEndLinks: {
 ];
 
 const backEndLinks: {
-  link: string;
+  tag: tagData;
   icon: IconProps["icon"];
   label: string;
 }[] = [
@@ -32,39 +33,39 @@ const backEndLinks: {
   //   label: "Node.js",
   // },
   {
-    link: "nextjs",
+    tag: "nextjs",
     icon: "nextjs",
     label: "Next.js",
   },
   {
-    link: "expressjs",
+    tag: "expressjs",
     icon: "expressjs",
     label: "Express.js",
   },
   {
-    link: "astro",
+    tag: "astro",
     icon: "astro",
     label: "Astro",
   },
 ];
 
 const dbLinks: {
-  link: string;
+  tag: tagData;
   icon: IconProps["icon"];
   label: string;
 }[] = [
   {
-    link: "postgresql",
+    tag: "postgres",
     icon: "postgres",
     label: "PostgreSQL",
   },
   {
-    link: "mysql",
+    tag: "mysql",
     icon: "mysql",
     label: "MySQL",
   },
   {
-    link: "mongodb",
+    tag: "mongodb",
     icon: "mongodb",
     label: "MongoDB",
   },
@@ -105,7 +106,7 @@ const dbLinks: {
             {
               frontEndLinks.map((link) => (
                 <LabeledIcon
-                  link={link.link}
+                  tag={link.tag}
                   label={link.label}
                   icon={link.icon}
                 />
@@ -120,7 +121,7 @@ const dbLinks: {
             {
               backEndLinks.map((link) => (
                 <LabeledIcon
-                  link={link.link}
+                  tag={link.tag}
                   label={link.label}
                   icon={link.icon}
                 />
@@ -135,7 +136,7 @@ const dbLinks: {
             {
               dbLinks.map((link) => (
                 <LabeledIcon
-                  link={link.link}
+                  tag={link.tag}
                   label={link.label}
                   icon={link.icon}
                 />
@@ -154,11 +155,11 @@ const dbLinks: {
       </div>
       <div>
         <ProjectComponent
-          link="https://github.com/khawaja-ammar/chatting_MERN"
-          title="MERN Chatting App"
-          tags={["javascript", "react", "express", "node", "mongodb"]}
+          title="Nextjs Website"
+          link="https://github.com/khawaja-ammar/nextjs_oaks-website"
+          tags={["javascript", "typescript", "nextjs", "react"]}
           points={[
-            " Developed a full-stack web application using express.js serving REST APIs with React and tailwindcss + daisyUI as the frontend",
+            "Developed a full-stack web application using express.js serving REST APIs with React and tailwindcss + daisyUI as the frontend",
             "Authorization and authentication done using JSON web tokens (JWT) for secure sessions",
             "Implemented Real-time communication between clients using Socket.IO (including message indicators)",
             "Client information and messages stored in MongoDB instance for faster reads",
@@ -166,8 +167,20 @@ const dbLinks: {
         />
         <br />
         <ProjectComponent
-          link="https://github.com/khawaja-ammar/pythonP2P"
+          title="MERN Chatting App"
+          link="https://github.com/khawaja-ammar/chatting_MERN"
+          tags={["javascript", "react", "expressjs", "nodejs", "mongodb"]}
+          points={[
+            "Developed a full-stack web application using express.js serving REST APIs with React and tailwindcss + daisyUI as the frontend",
+            "Authorization and authentication done using JSON web tokens (JWT) for secure sessions",
+            "Implemented Real-time communication between clients using Socket.IO (including message indicators)",
+            "Client information and messages stored in MongoDB instance for faster reads",
+          ]}
+        />
+        <br />
+        <ProjectComponent
           title="Peer-to-peer File Sharing (Python)"
+          link="https://github.com/khawaja-ammar/pythonP2P"
           tags={["python", "sockets", "oop"]}
           points={[
             "Engineered a Chord-like p2p node for sharing files with other nodes on request",
