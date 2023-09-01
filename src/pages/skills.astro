@@ -1,138 +1,139 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { Props as IconProps } from "../components/svg/SVGIcon.astro";
+import type { tagData } from "../types";
 import LabeledIcon from "../components/ui/LabeledIcon.astro";
 
 const language_DSLs: {
-  link: string;
+  tag: tagData;
   icon: IconProps["icon"];
   label: string;
 }[] = [
   {
-    link: "html",
+    tag: "html",
     icon: "lang_html",
     label: "HTML",
   },
 
   {
-    link: "css",
+    tag: "css",
     icon: "lang_css",
     label: "CSS",
   },
   {
-    link: "sql",
+    tag: "sql",
     icon: "lang_sql",
     label: "SQL",
   },
 ];
 
 const language_programming: {
-  link: string;
+  tag: tagData;
   icon: IconProps["icon"];
   label: string;
 }[] = [
   {
-    link: "javascript",
+    tag: "javascript",
     icon: "lang_javascript",
     label: "Javascript",
   },
   {
-    link: "typescript",
+    tag: "typescript",
     icon: "lang_typescript",
     label: "Typescript",
   },
   // {
-  //   link: "nodejs",
+  //   tag: "nodejs",
   //   icon: "nodejs",
   //   label: "Node.js",
   // },
   {
-    link: "python",
+    tag: "python",
     icon: "lang_python",
     label: "Python",
   },
   {
-    link: "golang",
+    tag: "golang",
     icon: "lang_golang",
     label: "Golang",
   },
   {
-    link: "cplusplus",
-    icon: "lang_cplusplus",
+    tag: "cpp",
+    icon: "lang_cpp",
     label: "C/C++",
   },
 ];
 
 const frontEndLinks: {
-  link: string;
+  tag: tagData;
   icon: IconProps["icon"];
   label: string;
 }[] = [
   {
-    link: "react",
+    tag: "react",
     icon: "react",
     label: "React.js",
   },
   // {
-  //   link: "svelte",
+  //   tag: "svelte",
   //   icon: "svelte",
   //   label: "Svelte",
   // },
 ];
 
 const fullstackLinks: {
-  link: string;
+  tag: tagData;
   icon: IconProps["icon"];
   label: string;
 }[] = [
   {
-    link: "nextjs",
+    tag: "nextjs",
     icon: "nextjs",
     label: "Next.js",
   },
   {
-    link: "astro",
+    tag: "astro",
     icon: "astro",
     label: "Astro",
   },
 ];
 
 const backEndLinks: {
-  link: string;
+  tag: tagData;
   icon: IconProps["icon"];
   label: string;
 }[] = [
   {
-    link: "expressjs",
+    tag: "expressjs",
     icon: "expressjs",
     label: "Express.js",
   },
 ];
 
 const dbLinks: {
-  link: string;
+  tag: tagData;
   icon: IconProps["icon"];
   label: string;
 }[] = [
   {
-    link: "postgresql",
+    tag: "postgres",
     icon: "postgres",
     label: "PostgreSQL",
   },
   {
-    link: "mysql",
+    tag: "mysql",
     icon: "mysql",
     label: "MySQL",
   },
   {
-    link: "mongodb",
+    tag: "mongodb",
     icon: "mongodb",
     label: "MongoDB",
   },
 ];
 
 // const saasLinks: {
-//   link: string;
+//   tag: tagData;
 //   icon: IconProps["icon"];
 //   label: string;
 // }[] = [
@@ -141,53 +142,58 @@ const dbLinks: {
 // ];
 
 const uiLibLinks: {
-  link: string;
+  tag: tagData;
   icon: IconProps["icon"];
   label: string;
 }[] = [
   {
-    link: "tailwind",
+    tag: "tailwindcss",
     icon: "lib_tailwind",
     label: "TailwindCSS",
   },
   {
-    link: "daisyui",
+    tag: "daisyui",
     icon: "lib_daisyui",
     label: "DaisyUI",
   },
 ];
 
 const miscLibLinks: {
-  link: string;
+  tag: tagData;
   icon: IconProps["icon"];
   label: string;
 }[] = [
   {
-    link: "socketio",
+    tag: "socketio",
     icon: "lib_socketio",
     label: "Socket.IO",
   },
   // {
-  //   link: "graphql",
+  //   tag: "graphql",
   //   icon: "lib_graphql",
   //   label: "GraphQL",
   // },
   {
-    link: "jwt",
+    tag: "jwt",
     icon: "lib_jwt",
     label: "JWT",
   },
 ];
 
 const testingLibLinks: {
-  link: string;
+  tag: tagData;
   icon: IconProps["icon"];
   label: string;
 }[] = [
   {
-    link: "jestjs",
+    tag: "jestjs",
     icon: "lib_jestjs",
     label: "Jest.js",
+  },
+  {
+    tag: "lighthouse",
+    icon: "lib_lighthouse",
+    label: "Lighthouse",
   },
 ];
 ---
@@ -209,7 +215,7 @@ const testingLibLinks: {
             {
               language_DSLs.map((link) => (
                 <LabeledIcon
-                  link={link.link}
+                  tag={link.tag}
                   label={link.label}
                   icon={link.icon}
                 />
@@ -220,7 +226,7 @@ const testingLibLinks: {
             {
               language_programming.map((link) => (
                 <LabeledIcon
-                  link={link.link}
+                  tag={link.tag}
                   label={link.label}
                   icon={link.icon}
                 />
@@ -243,7 +249,7 @@ const testingLibLinks: {
             {
               frontEndLinks.map((link) => (
                 <LabeledIcon
-                  link={link.link}
+                  tag={link.tag}
                   label={link.label}
                   icon={link.icon}
                 />
@@ -254,7 +260,7 @@ const testingLibLinks: {
             {
               fullstackLinks.map((link) => (
                 <LabeledIcon
-                  link={link.link}
+                  tag={link.tag}
                   label={link.label}
                   icon={link.icon}
                 />
@@ -265,7 +271,7 @@ const testingLibLinks: {
             {
               backEndLinks.map((link) => (
                 <LabeledIcon
-                  link={link.link}
+                  tag={link.tag}
                   label={link.label}
                   icon={link.icon}
                 />
@@ -288,7 +294,7 @@ const testingLibLinks: {
             {
               dbLinks.map((link) => (
                 <LabeledIcon
-                  link={link.link}
+                  tag={link.tag}
                   label={link.label}
                   icon={link.icon}
                 />
@@ -311,7 +317,7 @@ const testingLibLinks: {
             {
               uiLibLinks.map((link) => (
                 <LabeledIcon
-                  link={link.link}
+                  tag={link.tag}
                   label={link.label}
                   icon={link.icon}
                 />
@@ -322,7 +328,7 @@ const testingLibLinks: {
             {
               miscLibLinks.map((link) => (
                 <LabeledIcon
-                  link={link.link}
+                  tag={link.tag}
                   label={link.label}
                   icon={link.icon}
                 />
@@ -333,7 +339,7 @@ const testingLibLinks: {
             {
               testingLibLinks.map((link) => (
                 <LabeledIcon
-                  link={link.link}
+                  tag={link.tag}
                   label={link.label}
                   icon={link.icon}
                 />
