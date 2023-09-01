@@ -5,11 +5,11 @@ export interface Props {
   link: string;
   title: string;
   points: string[];
-  skills: string[];
+  tags: string[];
   image?: string;
 }
 
-const { link, title, points, skills, image = "" } = Astro.props;
+const { link, title, points, tags, image = "" } = Astro.props;
 ---
 
 <div class="basis-full">
@@ -22,28 +22,35 @@ const { link, title, points, skills, image = "" } = Astro.props;
   </a>
   <div class="flex items-center gap-4 py-1 text-sm">
     {
-      skills.map((skill) => (
-        <p class="rounded-xl bg-accentcolor px-2 py-[2px] text-white dark:text-black">
-          {skill}
+      tags.map((tag) => (
+        // TODO: Add onhover clickable link that goes to project page and finds all projects with this tag
+        <p class="rounded-xl bg-accentcolor bg-opacity-[65%] px-2 py-[2px] text-white hover:bg-opacity-100 dark:text-black">
+          {`#${tag}`}
         </p>
       ))
     }
   </div>
   <div
-    class={image !== "" ? "flex flex-col items-center gap-4 lg:flex-row" : ""}
+    class={image !== ""
+      ? "flex flex-col-reverse items-center gap-4 lg:flex-row"
+      : ""}
   >
-    {
-      image !== "" && (
-        <div class="w-1/3 basis-1/6 lg:w-full">
-          <img
-            src={image}
-            class="mt-4 rounded-lg border-2 border-bordercolor border-opacity-25 dark:border-bordercolor-dark sm:rounded-lg lg:mt-0"
-          />
-        </div>
-      )
-    }
-    <ul class={image !== "" ? "basis-5/6 list-disc pl-6" : "list-disc pl-6"}>
+    <ul
+      class={image !== "" ? "basis-5/6 list-disc pl-6 pr-6" : "list-disc pl-6"}
+    >
       {points.map((point) => <li>{point}</li>)}
     </ul>
+    {
+      image !== "" && (
+        <>
+          <div class="w-1/3 basis-1/6 lg:w-full">
+            <img
+              src={image}
+              class="mt-4 rounded-lg border-2 border-bordercolor border-opacity-25 dark:border-bordercolor-dark sm:rounded-lg lg:mt-0"
+            />
+          </div>
+        </>
+      )
+    }
   </div>
 </div>
