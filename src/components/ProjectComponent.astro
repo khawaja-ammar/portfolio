@@ -1,6 +1,6 @@
 ---
-import SVGIcon from "../svg/SVGIcon.astro";
-import type { tagData } from "../../types";
+import SVGIcon from "./svg/SVGIcon.astro";
+import type { tagData } from "../types";
 
 export interface Props {
   link: string;
@@ -21,7 +21,7 @@ const { link, title, points, tags, image = "" } = Astro.props;
       className="text-xs lg:text-sm dark:fill-white"
     />
   </a>
-  <div class="flex items-center gap-4 py-1 text-sm">
+  <div class="flex items-center gap-4 py-1 text-xs lg:text-sm">
     {
       tags.map((tag) => (
         // TODO: Add onhover clickable link that goes to project page and finds all projects with this tag

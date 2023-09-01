@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import type { Props as IconProps } from "../components/svg/SVGIcon.astro";
 import type { tagData } from "../types";
 import LabeledIcon from "../components/ui/LabeledIcon.astro";
-import ProjectComponent from "../components/ui/ProjectComponent.astro";
+import ProjectComponent from "../components/ProjectComponent.astro";
 
 const frontEndLinks: {
   tag: tagData;
@@ -157,19 +157,28 @@ const dbLinks: {
         <ProjectComponent
           title="Nextjs Website"
           link="https://github.com/khawaja-ammar/nextjs_oaks-website"
-          tags={["javascript", "typescript", "nextjs", "react"]}
+          tags={["javascript", "typescript", "nextjs", "react", "tailwindcss"]}
           points={[
-            "Developed a full-stack web application using express.js serving REST APIs with React and tailwindcss + daisyUI as the frontend",
-            "Authorization and authentication done using JSON web tokens (JWT) for secure sessions",
-            "Implemented Real-time communication between clients using Socket.IO (including message indicators)",
-            "Client information and messages stored in MongoDB instance for faster reads",
+            "SSG mode for SEO optimized and quick web page responses",
+            "Google Maps API used to pin the location of the business",
+            "Custom Nextjs API made for Nodemailer to send emails through the contact page",
+            "Image galleries and tables designed in react to present information",
           ]}
         />
         <br />
         <ProjectComponent
           title="MERN Chatting App"
           link="https://github.com/khawaja-ammar/chatting_MERN"
-          tags={["javascript", "react", "expressjs", "nodejs", "mongodb"]}
+          tags={[
+            "javascript",
+            "react",
+            "expressjs",
+            "nodejs",
+            "socketio",
+            "mongodb",
+            "tailwindcss",
+            "daisyui",
+          ]}
           points={[
             "Developed a full-stack web application using express.js serving REST APIs with React and tailwindcss + daisyUI as the frontend",
             "Authorization and authentication done using JSON web tokens (JWT) for secure sessions",

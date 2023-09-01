@@ -26,4 +26,5 @@ export type tagData =
   | "graphql"
   | "jestjs"
   | "lighthouse"
-  | "oop";
+  | "oop"
+  | "restapi";
