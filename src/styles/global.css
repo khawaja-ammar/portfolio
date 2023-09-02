@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "Source Sans 3";
+    src: url("fonts/SourceSans3-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Fira Code";
+    src: url("fonts/FiraCode-Regular.ttf");
+  }
+
   body {
     @apply bg-primarycolor text-[#374151] dark:bg-primarycolor-dark dark:text-[#d1d5db];
     font-family: "Source Sans 3", sans-serif;
