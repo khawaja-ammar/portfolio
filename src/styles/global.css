@@ -1,17 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "Source Sans 3";
-  src: local("Source Sans 3"), url("fonts/SourceSans3-Regular.ttf");
+  src: url("fonts/SourceSans3-Regular.ttf");
   font-display: swap;
 }
 @font-face {
   font-family: "Fira Code";
-  src: local("Fira Code"), url("fonts/FiraCode-Regular.ttf");
+  src: url("fonts/FiraCode-Regular.ttf");
   font-display: swap;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   body {
