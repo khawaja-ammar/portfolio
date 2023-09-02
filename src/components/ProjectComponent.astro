@@ -14,7 +14,7 @@ const { link, title, points, tags, image = "" } = Astro.props;
 ---
 
 <div class="mx-auto basis-full">
-  <a href={link} target="_blank" class="flex items-center gap-2">
+  <a href={link} target="_blank" class="inline-flex items-center gap-2">
     <h3>{title}</h3>
     <SVGIcon
       icon="externallink"
@@ -27,7 +27,7 @@ const { link, title, points, tags, image = "" } = Astro.props;
     {
       tags.map((tag) => (
         // TODO: Add onhover clickable link that goes to project page and finds all projects with this tag
-        <p class="rounded-xl bg-accentcolor bg-opacity-[65%] px-[0.5em] py-[0.1em] text-white hover:bg-opacity-100 dark:text-black">
+        <p class="cursor-pointer rounded-xl bg-accentcolor bg-opacity-[65%] px-[0.5em] py-[0.1em] text-white hover:bg-opacity-100 dark:text-black">
           {`#${tag}`}
         </p>
       ))
