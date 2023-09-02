@@ -17,18 +17,16 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <style>
-      @font-face {
-        font-family: "Source Sans 3";
-        src: url("fonts/SourceSans3-Regular.ttf");
-        font-display: swap;
-      }
-      @font-face {
-        font-family: "Fira Code";
-        src: url("fonts/FiraCode-Regular.ttf");
-        font-display: swap;
-      }
-    </style>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+      rel="stylesheet"
+    /> -->
     <title>{title}</title>
     <meta name="description" property="og:description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
