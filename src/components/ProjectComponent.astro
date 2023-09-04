@@ -39,7 +39,9 @@ const { link, title, points, tags, image = "" } = Astro.props;
       : ""}
   >
     <ul
-      class={image !== "" ? "basis-5/6 list-disc pl-6 pr-6" : "list-disc pl-6"}
+      class={image !== ""
+        ? "basis-5/6 list-disc ml-[1em] pr-6"
+        : "list-disc ml-[1em]"}
     >
       {points.map((point) => <li>{point}</li>)}
     </ul>
