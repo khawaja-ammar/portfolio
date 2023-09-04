@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MarkdownContainer from "../layouts/MarkdownContainer.astro";
 import * as AboutContent from "../content/static/aboutPage.md";
 ---
 
@@ -8,10 +9,12 @@ import * as AboutContent from "../content/static/aboutPage.md";
   description="Overview of my personality and nature in the context of programming"
 >
   <main class="sectionContainer">
-    <section
+    <!-- <section
       class="!prose !prose-quoteless mx-auto dark:!prose-invert lg:!prose-lg xl:!prose-xl 2xl:!prose-2xl lg:min-w-[750px] xl:min-w-[900px] 2xl:min-w-[1000px]"
-    >
+    > -->
+    <!-- <section class="markdown-container"> -->
+    <MarkdownContainer>
       <AboutContent.Content />
-    </section>
+    </MarkdownContainer>
   </main>
 </BaseLayout>

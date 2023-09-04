@@ -116,7 +116,7 @@ const url = Astro.url.pathname;
         <ul class="flex flex-col">
           {
             navItems.map(({ label, href }) => (
-              <li>
+              <li class="list-none">
                 <a
                   class={`${
                     url === href ? "text-accentcolor" : "hover:opacity-50"
