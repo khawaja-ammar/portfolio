@@ -14,11 +14,12 @@
 }
 
 @layer base {
+  /* text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl */
   body {
-    @apply bg-primarycolor font-text text-[#374151] dark:bg-primarycolor-dark dark:text-[#d1d5db];
+    @apply bg-primarycolor font-text text-sm text-[#374151] dark:bg-primarycolor-dark dark:text-[#d1d5db] md:text-base lg:text-lg xl:text-xl;
   }
   a:hover {
-    @apply opacity-50 duration-300;
+    @apply opacity-50 duration-150;
   }
   h1 {
     @apply !text-xl !font-bold text-[#111827] dark:text-white md:!text-2xl lg:!text-3xl xl:!text-4xl 2xl:!text-5xl;
