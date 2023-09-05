@@ -201,10 +201,14 @@ const url = Astro.url.pathname;
         smallScreenToggle.classList.remove("is-active");
         smallScreenModal.classList.remove("is-active");
         smallScreenContent.classList.remove("is-active");
+
+        smallScreenModal.removeEventListener("click", setActive);
       } else {
         smallScreenToggle.classList.add("is-active");
         smallScreenModal.classList.add("is-active");
         smallScreenContent.classList.add("is-active");
+
+        smallScreenModal.addEventListener("click", setActive);
       }
     };
 

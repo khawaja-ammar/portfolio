@@ -56,13 +56,11 @@ const { title, description } = Astro.props;
     </script>
   </head>
   <body>
-    <div
-      class="mx-auto px-4 pb-16 pt-8 text-sm sm:px-10 md:text-base lg:text-lg xl:text-xl 2xl:max-w-[1920px]"
-    >
+    <div class="mx-auto px-4 pb-16 pt-8 sm:px-10 2xl:max-w-[1920px]">
       <Nav />
     </div>
     <div
-      class="mx-auto p-4 text-sm sm:p-16 md:p-20 md:text-base lg:p-24 lg:text-lg xl:max-w-6xl xl:text-xl 2xl:max-w-7xl 2xl:text-2xl"
+      class="mx-auto p-4 sm:p-16 md:p-20 lg:p-24 xl:max-w-6xl 2xl:max-w-7xl 2xl:text-2xl"
     >
       <slot />
     </div>
