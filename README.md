@@ -20,6 +20,8 @@ Used PNPM to build
 - [x] ~~**Bug**: The js code that listens to events outside the small screen nav bar should close automatically as if small nav is open and we switch to big screen~~
 - [x] ~~**Feature**: Stop using prose tailwind classes and make custom styling classes~~
 - [ ] **Feature**: Move image fmt to avif + webp fallback, and fix the CLS issue
+- [ ] **Feature**: Switch to React?
+- [ ] **Feature**: useTransitions API?
 - [ ] **Bug**: Page 404 doesn't load for invalid pages on cloudflare
 - [ ] **Feature**: Make "projects" page with tags?
 - [ ] **Feature**: Blog with a search functionality and tags (links in with projects)
