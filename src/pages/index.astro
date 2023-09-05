@@ -4,7 +4,7 @@ import type { Props as IconProps } from "../components/svg/SVGIcon.astro";
 import type { tagData } from "../types";
 import LabeledIcon from "../components/ui/LabeledIcon.astro";
 import ProjectComponent from "../components/ProjectComponent.astro";
-import projectsArray from "../content/projects/projects_summary";
+import ProjectsArray from "../content/projects/ProjectsSummary";
 
 const frontEndLinks: {
   tag: tagData;
@@ -155,16 +155,14 @@ const dbLinks: {
       </div>
       <div class="flex flex-col gap-[1em]">
         {
-          projectsArray
-            .slice(0, 3)
-            .map((project) => (
-              <ProjectComponent
-                title={project.title}
-                link={project.link}
-                tags={project.tags}
-                points={project.points}
-              />
-            ))
+          ProjectsArray.slice(0, 3).map((project) => (
+            <ProjectComponent
+              title={project.title}
+              link={project.link}
+              tags={project.tags}
+              points={project.points}
+            />
+          ))
         }
       </div>
     </section>
@@ -196,4 +194,4 @@ const dbLinks: {
       </div>
     </section>
   </main>
-</BaseLayout>
+</BaseLayout>../content/projects/ProjectsSummary
