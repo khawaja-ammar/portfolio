@@ -1,6 +1,6 @@
 import { type Props as ProjectType } from "../../components/ProjectComponent.astro";
 
-const projectsArray: ProjectType[] = [
+const ProjectsArray: ProjectType[] = [
   {
     title: "MERN Chatting App",
     link: "https://github.com/khawaja-ammar/chatting_MERN",
@@ -56,4 +56,4 @@ const projectsArray: ProjectType[] = [
   },
 ];
 
-export default projectsArray;
+export default ProjectsArray;
