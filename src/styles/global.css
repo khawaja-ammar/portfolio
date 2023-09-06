@@ -6,29 +6,40 @@
   font-family: "Source Sans 3";
   src: url("/fonts/SourceSans3-Regular.ttf");
   font-display: swap;
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "Fira Code";
   src: url("/fonts/FiraCode-Regular.ttf");
   font-display: swap;
+  font-weight: normal;
+  font-style: normal;
 }
 
 @layer base {
   /* text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl */
   body {
     @apply bg-primarycolor font-text text-sm text-[#374151] dark:bg-primarycolor-dark dark:text-[#d1d5db] md:text-base lg:text-lg xl:text-xl;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   a:hover {
     @apply opacity-50 duration-150;
   }
+  h1,
+  h2,
+  h3 {
+    @apply text-[#111827] dark:text-white;
+  }
   h1 {
-    @apply !text-xl !font-bold text-[#111827] dark:text-white md:!text-2xl lg:!text-3xl xl:!text-4xl 2xl:!text-5xl;
+    @apply !text-xl md:!text-2xl lg:!text-3xl xl:!text-4xl 2xl:!text-5xl;
   }
   h2 {
-    @apply !text-lg !font-bold text-[#111827] dark:text-white md:!text-xl lg:!text-2xl xl:!text-3xl 2xl:!text-4xl;
+    @apply !text-lg md:!text-xl lg:!text-2xl xl:!text-3xl 2xl:!text-4xl;
   }
   h3 {
-    @apply !text-base !font-bold text-[#111827] dark:text-white md:!text-lg lg:!text-xl xl:!text-2xl 2xl:!text-3xl;
+    @apply !text-base md:!text-lg lg:!text-xl xl:!text-2xl 2xl:!text-3xl;
   }
 }
 
