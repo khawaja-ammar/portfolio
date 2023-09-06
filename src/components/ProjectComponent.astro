@@ -27,7 +27,7 @@ const { link, title, points, tags, image = "" } = Astro.props;
     {
       tags.map((tag) => (
         // TODO: Add onhover clickable link that goes to project page and finds all projects with this tag
-        <p class="cursor-pointer rounded-xl bg-accentcolor bg-opacity-[65%] px-[0.5em] py-[0.1em] text-white hover:bg-opacity-100 dark:text-black">
+        <p class="cursor-pointer rounded-xl bg-accentcolor bg-opacity-[65%] px-[0.5em] py-[0.075em] text-white hover:bg-opacity-100 dark:text-black">
           {`#${tag}`}
         </p>
       ))
@@ -48,7 +48,7 @@ const { link, title, points, tags, image = "" } = Astro.props;
     {
       image !== "" && (
         <>
-          <a class="w-2/3 lg:w-full lg:basis-1/5" href={image} target="_blank">
+          <a class="w-2/3 lg:w-full lg:basis-1/5" href={image}>
             <img
               src={image}
               class="mt-4 rounded-lg border-2 border-bordercolor border-opacity-25 dark:border-bordercolor-dark sm:rounded-lg lg:mt-0"
