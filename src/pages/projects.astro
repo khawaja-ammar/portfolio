@@ -3,25 +3,28 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectComponent from "../components/ProjectComponent.astro";
 
 import ProjectsArray from "../content/projects/ProjectsSummary";
+import SectionComponent from "../components/SectionComponent.astro";
 // NOTE:
 // Visit Github
 // Search Engine
 ---
 
 <BaseLayout title="Projects" description="Projects Portfolio">
-  <main class="sectionContainer">
-    <div class="flex flex-col gap-[1em]">
-      {
-        ProjectsArray.map((project) => (
-          <ProjectComponent
-            title={project.title}
-            link={project.link}
-            tags={project.tags}
-            points={project.points}
-            image={project?.image}
-          />
-        ))
-      }
-    </div>
+  <main>
+    <SectionComponent>
+      <div class="flex flex-col gap-[1em]">
+        {
+          ProjectsArray.map((project) => (
+            <ProjectComponent
+              title={project.title}
+              link={project.link}
+              tags={project.tags}
+              points={project.points}
+              image={project?.image}
+            />
+          ))
+        }
+      </div>
+    </SectionComponent>
   </main>
 </BaseLayout>

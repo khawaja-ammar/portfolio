@@ -1,0 +1,27 @@
+---
+export interface Props {
+  title?: string;
+  link?: string;
+}
+const { title = "", link = "" } = Astro.props;
+---
+
+<section
+  class="w-full rounded-lg border-2 border-bordercolor border-opacity-25 bg-secondarycolor px-4 py-6 dark:border-bordercolor-dark dark:bg-secondarycolor-dark md:px-12 md:py-8"
+>
+  {
+    title !== "" && (
+      <div class="flex w-full justify-between">
+        <h2>{title}</h2>
+        {link !== "" && (
+          <a class="self-end text-accentcolor" href={link}>
+            ✨ See more...
+          </a>
+        )}
+      </div>
+    )
+  }
+  <div class={title !== "" || link !== "" ? "w-full py-[1rem]" : "w-full"}>
+    <slot />
+  </div>
+</section>
