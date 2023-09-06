@@ -41,9 +41,3 @@
     @apply !text-base md:!text-lg lg:!text-xl xl:!text-2xl 2xl:!text-3xl;
   }
 }
-
-@layer components {
-  .sectionContainer {
-    @apply flex w-full flex-col items-center rounded-lg border-2 border-bordercolor border-opacity-25 bg-secondarycolor px-4 py-6 dark:border-bordercolor-dark dark:bg-secondarycolor-dark md:px-12 md:py-8;
-  }
-}

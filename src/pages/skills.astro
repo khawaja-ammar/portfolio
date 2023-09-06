@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import type { Props as IconProps } from "../components/svg/SVGIcon.astro";
 import type { tagData } from "../types";
 import LabeledIcon from "../components/ui/LabeledIcon.astro";
+import SectionComponent from "../components/SectionComponent.astro";
 
 const language_DSLs: {
   tag: tagData;
@@ -203,12 +204,9 @@ const testingLibLinks: {
   description="Overview of programming languages, frameworks and libraries I know"
 >
   <main class="flex flex-col gap-12">
-    <section class="sectionContainer gap-4">
-      <div class="flex w-full justify-center md:justify-start">
-        <h2>Languages</h2>
-      </div>
+    <SectionComponent title="Languages">
       <div
-        class="flex w-full flex-col gap-10 text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
+        class="flex w-full flex-col gap-10 py-[0.5em] text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
       >
         <div class="flex flex-col gap-4">
           <div class="flex justify-center gap-8">
@@ -235,14 +233,11 @@ const testingLibLinks: {
           </div>
         </div>
       </div>
-    </section>
+    </SectionComponent>
 
-    <section class="sectionContainer gap-4">
-      <div class="flex w-full justify-center md:justify-start">
-        <h2>Frameworks</h2>
-      </div>
+    <SectionComponent title="Frameworks">
       <div
-        class="flex w-full flex-col gap-10 text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
+        class="flex w-full flex-col gap-10 py-[0.5em] text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
       >
         <div class="flex flex-col gap-4">
           <div class="flex justify-center gap-8">
@@ -280,14 +275,11 @@ const testingLibLinks: {
           </div>
         </div>
       </div>
-    </section>
+    </SectionComponent>
 
-    <section class="sectionContainer gap-4">
-      <div class="flex w-full justify-center md:justify-start">
-        <h2>Databases</h2>
-      </div>
+    <SectionComponent title="Databases">
       <div
-        class="flex w-full flex-col gap-10 text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
+        class="flex w-full flex-col gap-10 py-[0.5em] text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
       >
         <div class="flex flex-col gap-4">
           <div class="flex justify-center gap-8">
@@ -303,14 +295,11 @@ const testingLibLinks: {
           </div>
         </div>
       </div>
-    </section>
+    </SectionComponent>
 
-    <section class="sectionContainer gap-4">
-      <div class="flex w-full justify-center md:justify-start">
-        <h2>Libraries</h2>
-      </div>
+    <SectionComponent title="Libraries">
       <div
-        class="flex w-full flex-col gap-10 text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
+        class="flex w-full flex-col gap-10 py-[0.5em] text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
       >
         <div class="flex flex-col gap-4">
           <div class="flex justify-center gap-8">
@@ -348,6 +337,6 @@ const testingLibLinks: {
           </div>
         </div>
       </div>
-    </section>
+    </SectionComponent>
   </main>
 </BaseLayout>

@@ -5,6 +5,7 @@ import type { tagData } from "../types";
 import LabeledIcon from "../components/ui/LabeledIcon.astro";
 import ProjectComponent from "../components/ProjectComponent.astro";
 import ProjectsArray from "../content/projects/ProjectsSummary";
+import SectionComponent from "../components/SectionComponent.astro";
 
 const frontEndLinks: {
   tag: tagData;
@@ -98,11 +99,7 @@ const dbLinks: {
       </div>
     </section>
 
-    <section class="sectionContainer">
-      <div class="flex w-full justify-between pb-[1.5em]">
-        <h2>Tech Stacks</h2>
-        <a class="self-end text-accentcolor" href="/skills">✨ See more...</a>
-      </div>
+    <SectionComponent title="Tech Stacks" link="/skills">
       <div
         class="flex w-full flex-col gap-[1em] text-2xl md:text-3xl lg:text-5xl xl:text-6xl"
       >
@@ -120,7 +117,6 @@ const dbLinks: {
             }
           </div>
         </div>
-
         <div>
           <h3 class="pb-[1em]">Server Frameworks</h3>
           <div class="flex justify-center gap-[1em]">
@@ -135,7 +131,6 @@ const dbLinks: {
             }
           </div>
         </div>
-
         <div>
           <h3 class="pb-[1em]">Databases</h3>
           <div class="flex justify-center gap-[1em]">
@@ -151,13 +146,9 @@ const dbLinks: {
           </div>
         </div>
       </div>
-    </section>
+    </SectionComponent>
 
-    <section class="sectionContainer">
-      <div class="flex w-full justify-between pb-[1.5em]">
-        <h2>Projects</h2>
-        <a class="self-end text-accentcolor" href="/projects">✨ See more...</a>
-      </div>
+    <SectionComponent title="Projects" link="/projects">
       <div class="flex flex-col gap-[1em]">
         {
           ProjectsArray.slice(0, 3).map((project) => (
@@ -170,13 +161,9 @@ const dbLinks: {
           ))
         }
       </div>
-    </section>
+    </SectionComponent>
 
-    <section class="sectionContainer">
-      <div class="flex w-full justify-between pb-[1.5em]">
-        <h2>About Me</h2>
-        <a class="self-end text-accentcolor" href="/about">✨ See more...</a>
-      </div>
+    <SectionComponent title="About Me" link="/about">
       <div class="flex flex-col gap-[1em]">
         <p>
           I started programming around the last year of my high school (2015)
@@ -197,6 +184,6 @@ const dbLinks: {
           blogs that can help me become a better programmer.
         </p>
       </div>
-    </section>
+    </SectionComponent>
   </main>
 </BaseLayout>
