@@ -33,18 +33,12 @@ const { link, title, points, tags, image = "" } = Astro.props;
       ))
     }
   </div>
-  <div class={image !== "" ? "flex flex-col-reverse gap-4 lg:flex-row" : ""}>
-    <ul
-      class={image !== ""
-        ? "lg:basis-4/5 list-disc ml-[1em] lg:pr-6 w-full"
-        : "list-disc ml-[1em] w-full"}
-    >
-      {points.map((point) => <li>{point}</li>)}
-    </ul>
+  <!-- lg:flex-row -->
+  <div class={image !== "" ? "flex flex-col" : ""}>
     {
       image !== "" && (
         <>
-          <a class="w-2/3 self-center lg:w-full lg:basis-1/5" href={image}>
+          <a class="w-2/4 self-center py-4 hover:opacity-100" href={image}>
             <img
               src={image}
               class="mt-4 rounded-lg border-2 border-bordercolor border-opacity-25 dark:border-bordercolor-dark sm:rounded-lg lg:mt-0"
@@ -53,5 +47,8 @@ const { link, title, points, tags, image = "" } = Astro.props;
         </>
       )
     }
+    <ul class="ml-[1em] w-full list-disc">
+      {points.map((point) => <li>{point}</li>)}
+    </ul>
   </div>
 </div>
