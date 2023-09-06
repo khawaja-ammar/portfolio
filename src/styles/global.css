@@ -18,7 +18,6 @@
 }
 
 @layer base {
-  /* text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl */
   body {
     @apply bg-primarycolor font-text text-sm text-[#374151] dark:bg-primarycolor-dark dark:text-[#d1d5db] md:text-base lg:text-lg xl:text-xl;
     -webkit-font-smoothing: antialiased;
@@ -45,6 +44,6 @@
 
 @layer components {
   .sectionContainer {
-    @apply flex w-full flex-col items-center rounded-lg border-2 border-bordercolor border-opacity-25 bg-secondarycolor p-12 dark:border-bordercolor-dark dark:bg-secondarycolor-dark;
+    @apply flex w-full flex-col items-center rounded-lg border-2 border-bordercolor border-opacity-25 bg-secondarycolor px-4 py-6 dark:border-bordercolor-dark dark:bg-secondarycolor-dark md:px-12 md:py-8;
   }
 }
