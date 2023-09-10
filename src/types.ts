@@ -8,6 +8,7 @@ export type tagData =
   | "html"
   | "sql"
   | "nodejs"
+  | "bun"
   | "react"
   | "vue"
   | "svelte"
