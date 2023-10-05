@@ -1,4 +1,4 @@
-import { type Props as ProjectType } from "../../components/ProjectComponent.astro";
+import { type Props as ProjectType } from "../components/ProjectComponent.astro";
 
 const ProjectsArray: ProjectType[] = [
   {
