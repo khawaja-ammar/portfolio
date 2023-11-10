@@ -28,4 +28,6 @@ export type tagData =
   | "jestjs"
   | "lighthouse"
   | "oop"
-  | "restapi";
+  | "restapi"
+  | "docker"
+  | "redis";
