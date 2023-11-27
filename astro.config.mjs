@@ -1,4 +1,6 @@
 import { defineConfig } from "astro/config";
+
+import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 // import cloudflare from "@astrojs/cloudflare";
@@ -7,5 +9,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   // output: "server",
   // adapter: cloudflare(),
-  integrations: [tailwind()],
+  site: "https://ammarkhawaja.pages.dev/",
+  integrations: [tailwind(), sitemap()],
 });
