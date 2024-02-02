@@ -17,8 +17,9 @@ const { title, description } = Astro.props;
 <html lang="en">
   <head>
     <SEO
-      title=""
-      description=""
+      title={title || "Ammar Khawaja's Porfolio Website"}
+      description={description ||
+        "Portfolio website to showcase my experiance and projects"}
       openGraph={{
         basic: {
           type: "website",
