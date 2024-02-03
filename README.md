@@ -17,6 +17,7 @@ Deployed on cloudflare at: https://ammarkhawaja.pages.dev/
 - [x] ~~**Feature**: Stop using prose tailwind classes and make custom styling classes~~
 - [x] ~~**Bug**: Page 404 doesn't load for invalid pages on cloudflare~~
 - [x] ~~**Feature**: Make "projects" page with tags?~~
+- [ ] **Bug**: When page switched, the title is _Popped in_ and replaced??
 - [ ] **Addition**: Add DevOps
 - [ ] **Optimization**: Switch to woff, woff2 fonts
 - [ ] **Feature**: fix the CLS issue
